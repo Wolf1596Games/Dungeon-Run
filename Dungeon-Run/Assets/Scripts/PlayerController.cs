@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseMovementSpeed = 1f;
     [SerializeField] float speed = 0f;
     [SerializeField] float sprintMultiplier = 1.2f;
+    //[SerializeField] float baseStamina = 1f;
+    //[SerializeField] float stamina = 0f;
     private float horizontalMovement = 0f;
     private float verticalMovement = 0f;
 
@@ -20,7 +22,8 @@ public class PlayerController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         playerCollider = FindObjectOfType<BoxCollider2D>();
 
-        speed = baseMovementSpeed;
+        //speed = baseMovementSpeed;
+        //stamina = baseStamina;
     }
 
     // Update is called once per frame
@@ -41,11 +44,11 @@ public class PlayerController : MonoBehaviour
 
         if(horizontalMovement > 0f)
         {
-            rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
+            MoveHorizontal();
         }
         else if(horizontalMovement < 0f)
         {
-            rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
+            MoveHorizontal();
         }
         else
         {
@@ -57,15 +60,24 @@ public class PlayerController : MonoBehaviour
 
         if(verticalMovement > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, verticalMovement * speed);
+            MoveVertical();
         }
         else if(verticalMovement < 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, verticalMovement * speed);
+            MoveVertical();
         }
         else
         {
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
+    }
+
+    private void MoveHorizontal()
+    {
+        rb.velocity = new Vector2(horizontalMovement * speed, rb.velocity.y);
+    }
+    private void MoveVertical()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, verticalMovement * speed);
     }
 }

@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         playerCollider = FindObjectOfType<BoxCollider2D>();
 
-        //speed = baseMovementSpeed;
+        speed = baseMovementSpeed;
         //stamina = baseStamina;
     }
 

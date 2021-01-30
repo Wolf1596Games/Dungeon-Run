@@ -8,8 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseMovementSpeed = 1f;
     [SerializeField] float speed = 0f;
     [SerializeField] float sprintMultiplier = 1.2f;
-    //[SerializeField] float baseStamina = 1f;
-    //[SerializeField] float stamina = 0f;
+    [SerializeField] bool sprinting = false;
+
+
     private float horizontalMovement = 0f;
     private float verticalMovement = 0f;
 
@@ -23,7 +24,6 @@ public class PlayerController : MonoBehaviour
         playerCollider = FindObjectOfType<BoxCollider2D>();
 
         speed = baseMovementSpeed;
-        //stamina = baseStamina;
     }
 
     // Update is called once per frame
@@ -32,12 +32,18 @@ public class PlayerController : MonoBehaviour
         //Sprinting
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
+            sprinting = true;
+
             speed *= sprintMultiplier;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
+            sprinting = false;
+
             speed = baseMovementSpeed;
         }
+
+
 
         //Horizontal Movement
         horizontalMovement = Input.GetAxis("Horizontal");

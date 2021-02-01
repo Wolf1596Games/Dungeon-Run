@@ -8,12 +8,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float baseMovementSpeed = 1f;
     [SerializeField] float speed = 0f;
     [SerializeField] float sprintMultiplier = 1.2f;
+    [SerializeField] float dodgeDuration = .5f;
+    [SerializeField] float dodgeCooldown = 5f;
     [SerializeField] bool sprinting = false;
 
 
     private float horizontalMovement = 0f;
     private float verticalMovement = 0f;
-
+    private float timeSinceDodge = 5f;
 
     Rigidbody2D rb;
     BoxCollider2D playerCollider;
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timeSinceDodge += Time.deltaTime;
+
         //Sprinting
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -43,18 +47,26 @@ public class PlayerController : MonoBehaviour
             speed = baseMovementSpeed;
         }
 
-
-
         //Horizontal Movement
         horizontalMovement = Input.GetAxis("Horizontal");
 
         if(horizontalMovement > 0f)
         {
             MoveHorizontal();
+
+            if(Input.GetButtonDown("Dodge") && timeSinceDodge >= 5f)
+            {
+                StartCoroutine("DodgeCoroutine");
+            }
         }
         else if(horizontalMovement < 0f)
         {
             MoveHorizontal();
+
+            if (Input.GetButtonDown("Dodge") && timeSinceDodge >= 5f)
+            {
+                StartCoroutine("DodgeCoroutine");
+            }
         }
         else
         {
@@ -67,10 +79,20 @@ public class PlayerController : MonoBehaviour
         if(verticalMovement > 0f)
         {
             MoveVertical();
+
+            if (Input.GetButtonDown("Dodge") && timeSinceDodge >= 5f)
+            {
+                StartCoroutine("DodgeCoroutine");
+            }
         }
         else if(verticalMovement < 0f)
         {
             MoveVertical();
+
+            if (Input.GetButtonDown("Dodge") && timeSinceDodge >= 5f)
+            {
+                StartCoroutine("DodgeCoroutine");
+            }
         }
         else
         {
@@ -86,4 +108,14 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(rb.velocity.x, verticalMovement * speed);
     }
+    private IEnumerator DodgeCoroutine()
+    {
+        speed *= 2.5f;
+        timeSinceDodge = 0f;
+
+        yield return new WaitForSeconds(dodgeDuration);
+
+        speed /= 2.5f;
+    }
+
 }

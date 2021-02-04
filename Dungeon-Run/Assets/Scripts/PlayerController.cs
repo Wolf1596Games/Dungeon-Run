@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour
     private bool facingLeft = false;
     private bool facingRight = false;
 
+    //Other private variables
+    public bool movingLeft = false;
+    public bool movingRight = true;
+
     //References
     Rigidbody2D rb;
     BoxCollider2D playerCollider;
@@ -73,6 +77,18 @@ public class PlayerController : MonoBehaviour
         {
             facingRight = true;
             facingLeft = false;
+        }
+
+        //Determine which way the player is facing
+        if(rb.velocity.x < 0)
+        {
+            movingLeft = true;
+            movingRight = false;
+        }
+        else if(rb.velocity.x > 0)
+        {
+            movingLeft = false;
+            movingRight = true;
         }
 
         //Sprinting

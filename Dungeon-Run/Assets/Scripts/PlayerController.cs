@@ -207,7 +207,15 @@ public class PlayerController : MonoBehaviour
     public void RangedAttack()
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
+
+        if(facingLeft == true)
+        {
+            projectile.GetComponent<Rigidbody2D>().velocity = Vector2.left * projectileSpeed;
+        }
+        else
+        {
+            projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
+        }
 
         timeSinceShot = 0f;
     }

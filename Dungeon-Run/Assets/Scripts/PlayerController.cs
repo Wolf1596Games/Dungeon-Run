@@ -17,18 +17,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int currentHealth = 3;
 
     [Header("Player Fighting")]
-    [SerializeField] int damage = 1;
+    [SerializeField] public int damage = 1;
     [SerializeField] float swingRange = 3f;
     [SerializeField] float timeBetweenSwings = .35f;
     [SerializeField] float timeBetweenShots = .35f;
-    [SerializeField] GameObject projectilePrefab;
 
+    [Header("Projectile")]
+    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] float projectileSpeed = 5f;
+
+    //Private movement variables
     private float horizontalMovement = 0f;
     private float verticalMovement = 0f;
     private float timeSinceDodge = 5f;
+
+    //Private fighting variables
     private float timeSinceSwing = .35f;
     private float timeSinceShot = .35f;
+    private bool facingLeft = false;
+    private bool facingRight = false;
 
+    //References
     Rigidbody2D rb;
     BoxCollider2D playerCollider;
 
@@ -38,13 +47,33 @@ public class PlayerController : MonoBehaviour
         rb = FindObjectOfType<Rigidbody2D>();
         playerCollider = FindObjectOfType<BoxCollider2D>();
 
+        //Set speed to base speed
         speed = baseMovementSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Increment time variables
         timeSinceDodge += Time.deltaTime;
+        timeSinceSwing += Time.deltaTime;
+        timeSinceShot += Time.deltaTime;
+
+        //Get mouse position
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+
+        //Determine which way the player should fire
+        if (mousePos.x <= transform.position.x)
+        {
+            facingLeft = true;
+            facingRight = false;
+        }
+        else
+        {
+            facingRight = true;
+            facingLeft = false;
+        }
 
         //Sprinting
         if(Input.GetKeyDown(KeyCode.LeftShift))
@@ -112,9 +141,15 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0);
         }
 
+        //Melee Attack
         if(Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
         {
             MeleeAttack();
+        }
+        //Ranged Attack
+        if(Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
+        {
+            RangedAttack();
         }
     }
 
@@ -150,10 +185,15 @@ public class PlayerController : MonoBehaviour
                 dummy.TakeDamage(damage);
             }
         }
+
+        timeSinceSwing = 0f;
     }
     public void RangedAttack()
     {
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
+        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
 
+        timeSinceShot = 0f;
     }
 
     //Taking damage

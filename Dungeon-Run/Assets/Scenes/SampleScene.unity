@@ -134,9 +134,10 @@ GameObject:
   - component: {fileID: 56932716}
   - component: {fileID: 56932715}
   - component: {fileID: 56932714}
-  m_Layer: 0
+  - component: {fileID: 56932717}
+  m_Layer: 9
   m_Name: Test-Sprite (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,6 +220,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &56932717
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56932713}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &168502847
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 168502848}
   - component: {fileID: 168502849}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -311,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 203783924}
   - component: {fileID: 203783925}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +421,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -520,9 +547,10 @@ GameObject:
   - component: {fileID: 1217990124}
   - component: {fileID: 1217990123}
   - component: {fileID: 1217990122}
-  m_Layer: 0
+  - component: {fileID: 1217990125}
+  m_Layer: 9
   m_Name: Test-Sprite (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,6 +633,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1217990125
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217990121}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &1243911569
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1243911570}
   - component: {fileID: 1243911571}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg-Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,9 +754,9 @@ GameObject:
   - component: {fileID: 1350121572}
   - component: {fileID: 1350121575}
   - component: {fileID: 1350121574}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -827,8 +881,9 @@ MonoBehaviour:
   damage: 1
   swingRange: 1.5
   timeBetweenSwings: 0.35
-  timeBetweenShots: 0.35
-  projectilePrefab: {fileID: 0}
+  timeBetweenShots: 0.2
+  projectilePrefab: {fileID: 3627507295010798364, guid: 1a5b3fabccfb22f45b09c7b908430229, type: 3}
+  projectileSpeed: 6.5
 --- !u!50 &1350121575
 Rigidbody2D:
   serializedVersion: 4
@@ -861,9 +916,10 @@ GameObject:
   - component: {fileID: 1593209154}
   - component: {fileID: 1593209153}
   - component: {fileID: 1593209152}
-  m_Layer: 0
+  - component: {fileID: 1593209155}
+  m_Layer: 9
   m_Name: Test-Sprite
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -946,6 +1002,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1593209155
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593209151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &1693533616
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,9 +1039,10 @@ GameObject:
   - component: {fileID: 1693533619}
   - component: {fileID: 1693533618}
   - component: {fileID: 1693533617}
-  m_Layer: 0
+  - component: {fileID: 1693533620}
+  m_Layer: 9
   m_Name: Test-Sprite (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1042,6 +1125,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1693533620
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693533616}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0
 --- !u!1 &1712416295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1052,7 +1161,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1712416296}
   - component: {fileID: 1712416297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,7 +1309,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072717629}
   - component: {fileID: 2072717630}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm-Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

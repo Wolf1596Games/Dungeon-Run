@@ -42,14 +42,14 @@ public class PlayerController : MonoBehaviour
     public bool movingRight = true;
 
     //References
-    Rigidbody2D rb;
-    BoxCollider2D playerCollider;
+    private Rigidbody2D rb;
+    private BoxCollider2D playerCollider;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = FindObjectOfType<Rigidbody2D>();
-        playerCollider = FindObjectOfType<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
 
         //Set speed to base speed
         speed = baseMovementSpeed;

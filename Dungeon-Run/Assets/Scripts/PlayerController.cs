@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
-    [SerializeField] float baseMovementSpeed = 1f;
+    [SerializeField] float baseMovementSpeed = 8f;
     [SerializeField] float speed = 0f;
-    [SerializeField] float sprintMultiplier = 1.2f;
+    [SerializeField] float sprintMultiplier = 1.75f;
     [SerializeField] float dodgeDuration = .5f;
     [SerializeField] float dodgeCooldown = 5f;
     [SerializeField] bool sprinting = false;
@@ -18,13 +18,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Fighting")]
     [SerializeField] public int damage = 1;
-    [SerializeField] float swingRange = 3f;
+    [SerializeField] float swingRange = 1.5f;
     [SerializeField] float timeBetweenSwings = .35f;
-    [SerializeField] float timeBetweenShots = .35f;
+    [SerializeField] float timeBetweenShots = .2f;
 
     [Header("Projectile")]
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] float projectileSpeed = 5f;
+    [SerializeField] float projectileSpeed = 6.5f;
 
     //Private movement variables
     private float horizontalMovement = 0f;
@@ -38,8 +38,8 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = false;
 
     //Other private variables
-    public bool movingLeft = false;
-    public bool movingRight = true;
+    private bool movingLeft = false;
+    private bool movingRight = true;
 
     //References
     private Rigidbody2D rb;
@@ -196,9 +196,22 @@ public class PlayerController : MonoBehaviour
 
         foreach(TestDummy dummy in dummies)
         {
+            //If the dummy is within swingRange, attack
             if(Vector2.Distance(transform.position, dummy.transform.position) <= swingRange)
             {
-                dummy.TakeDamage(damage);
+                //Check to make sure the dummy is on the correct side
+                if(facingLeft == true && dummy.transform.position.x <= transform.position.x)
+                {
+                    dummy.TakeDamage(damage);
+                }
+                else if(facingRight == true && dummy.transform.position.x > transform.position.x)
+                {
+                    dummy.TakeDamage(damage);
+                }
+                else
+                {
+                    Debug.Log("No enemy detected");
+                }
             }
         }
 

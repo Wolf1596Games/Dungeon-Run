@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool sprinting = false;
 
     [Header("Player Health")]
-    [SerializeField] int maxHealth = 3;
-    [SerializeField] int currentHealth = 3;
+    [SerializeField] public int maxHealth = 3;
+    [SerializeField] public int currentHealth = 3;
 
     [Header("Player Fighting")]
     [SerializeField] public int damage = 1;
@@ -44,12 +44,14 @@ public class PlayerController : MonoBehaviour
     //References
     private Rigidbody2D rb;
     private BoxCollider2D playerCollider;
+    private Camera main;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
+        main = FindObjectOfType<Camera>();
 
         //Set speed to base speed
         speed = baseMovementSpeed;
@@ -240,6 +242,8 @@ public class PlayerController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            main.transform.SetParent(null);
+
             Destroy(gameObject);
         }
     }

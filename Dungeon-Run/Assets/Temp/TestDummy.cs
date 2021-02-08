@@ -32,9 +32,9 @@ public class TestDummy : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerController>().TakeDamage(1);
+            //collision.gameObject.GetComponent<IsometricPlayerController>().TakeDamage(1);
 
-            TakeDamage(collision.GetComponent<PlayerController>().damage);
+            TakeDamage(collision.GetComponent<IsometricPlayerController>().damage);
         }
     }
 }

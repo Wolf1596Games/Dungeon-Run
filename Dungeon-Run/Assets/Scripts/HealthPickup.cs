@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    PlayerController player;
+    IsometricPlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<IsometricPlayerController>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

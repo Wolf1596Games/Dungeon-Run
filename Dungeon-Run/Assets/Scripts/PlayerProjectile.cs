@@ -7,12 +7,12 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] float lifespan = 10f;
     [SerializeField] float timeSinceCreated = 0f;
 
-    PlayerController player;
+    IsometricPlayerController player;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<IsometricPlayerController>();
     }
 
     // Update is called once per frame

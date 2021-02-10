@@ -6,18 +6,6 @@ public class TestDummy : MonoBehaviour
 {
     [SerializeField] int health = 3;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -32,7 +20,7 @@ public class TestDummy : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            //collision.gameObject.GetComponent<IsometricPlayerController>().TakeDamage(1);
+            collision.gameObject.GetComponent<IsometricPlayerController>().TakeDamage(1);
 
             TakeDamage(collision.GetComponent<IsometricPlayerController>().damage);
         }

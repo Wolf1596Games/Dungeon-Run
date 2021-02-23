@@ -5,25 +5,39 @@ using UnityEngine;
 public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
+    [Tooltip("Base player movement speed")]
     [SerializeField] float baseMovementSpeed = 8f;
+    [Tooltip("Current player movement speed")]
     [SerializeField] float currentSpeed = 0f;
+    [Tooltip("Multiplier for sprinting")]
     [SerializeField] float sprintMultiplier = 1.75f;
+    [Tooltip("Duration of the player's dodge")]
     [SerializeField] float dodgeDuration = .5f;
+    [Tooltip("Player's dodge cooldown")]
     [SerializeField] float dodgeCooldown = 5f;
+    [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
     [SerializeField] bool sprinting = false;
 
     [Header("Player Health")]
+    [Tooltip("Player's max health")]
     [SerializeField] public int maxHealth = 3;
+    [Tooltip("Player's current health")]
     [SerializeField] public int currentHealth = 3;
 
-    [Header("Player Fighting")]
+    [Header("Player Combat")]
+    [Tooltip("Player's damage per hit")]
     [SerializeField] public int damage = 1;
+    [Tooltip("Player's melee swing range")]
     [SerializeField] float swingRange = 1.5f;
+    [Tooltip("Time between player's melee attacks")]
     [SerializeField] float timeBetweenSwings = .35f;
+    [Tooltip("Time between player's ranged attacks")]
     [SerializeField] float timeBetweenShots = .2f;
 
     [Header("Projectile")]
+    [Tooltip("Prefab object for projectiles")]
     [SerializeField] GameObject projectilePrefab;
+    [Tooltip("Projectile's velocity when instantiated")]
     [SerializeField] float projectileSpeed = 6.5f;
 
     //Private movement variables

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Dungeon-Run/Assets/Temp/Placeholder01.png.meta
-guid: 7f1b66da90308a84994dfe7a4daec717
-=======
-guid: f6cf071070202864fb033a6b80b03cda
->>>>>>> main:Dungeon-Run/Assets/Sprites/4WhiteboxV2_0000_Bump.png.meta
+guid: e0cc02f0077357744bb92c04d5bc31d8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +63,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -79,7 +75,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

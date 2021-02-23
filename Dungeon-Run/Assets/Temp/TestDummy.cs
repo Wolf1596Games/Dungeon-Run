@@ -20,9 +20,16 @@ public class TestDummy : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            collision.gameObject.GetComponent<IsometricPlayerController>().TakeDamage(1);
+            if(FindObjectOfType<GameManager>().astralPlane == false)
+            {
+                Debug.Log("Attacked player");
 
-            TakeDamage(collision.GetComponent<IsometricPlayerController>().damage);
+                collision.gameObject.GetComponent<IsometricPlayerController>().TakeDamage(1);
+            }
+            else
+            {
+                FindObjectOfType<GameManager>().GameOver();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
     [SerializeField] float baseMovementSpeed = 8f;
-    [SerializeField] float speed = 0f;
+    [SerializeField] float currentSpeed = 0f;
     [SerializeField] float sprintMultiplier = 1.75f;
     [SerializeField] float dodgeDuration = .5f;
     [SerializeField] float dodgeCooldown = 5f;
@@ -45,15 +45,17 @@ public class IsometricPlayerController : MonoBehaviour
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
     private Camera main;
+    private GameManager manager;
 
     private void Awake()
     {
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         rb = GetComponent<Rigidbody2D>();
         main = FindObjectOfType<Camera>();
+        manager = FindObjectOfType<GameManager>();
 
         //Set speed to base speed
-        speed = baseMovementSpeed;
+        currentSpeed = baseMovementSpeed;
     }
 
     private void FixedUpdate()
@@ -64,7 +66,7 @@ public class IsometricPlayerController : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
         inputVector = Vector2.ClampMagnitude(inputVector, 1);
-        Vector2 movement = inputVector * speed;
+        Vector2 movement = inputVector * currentSpeed;
         Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
         isoRenderer.SetDirection(movement);
         rb.MovePosition(newPos);
@@ -110,13 +112,13 @@ public class IsometricPlayerController : MonoBehaviour
         {
             sprinting = true;
 
-            speed *= sprintMultiplier;
+            currentSpeed *= sprintMultiplier;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             sprinting = false;
 
-            speed = baseMovementSpeed;
+            currentSpeed = baseMovementSpeed;
         }
 
         
@@ -184,9 +186,18 @@ public class IsometricPlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            main.transform.SetParent(null);
+            Death();
+        }
+    }
+    public void Death()
+    {
+        main.transform.SetParent(null);
 
-            Destroy(gameObject);
+        //Destroy(gameObject);
+        if(!manager.astralPlane)
+        {
+            manager.astralPlane = true;
+            manager.ToAstralPlane();
         }
     }
 }

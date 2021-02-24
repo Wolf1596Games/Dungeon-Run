@@ -56,6 +56,7 @@ public class IsometricPlayerController : MonoBehaviour
     private bool movingRight = true;
 
     //References
+    //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
     private Camera main;

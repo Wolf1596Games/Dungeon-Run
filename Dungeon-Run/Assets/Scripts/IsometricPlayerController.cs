@@ -6,7 +6,7 @@ public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
     [Tooltip("Base player movement speed")]
-    [SerializeField] float baseMovementSpeed = 8f;
+    [SerializeField] float baseMovementSpeed = 2f;
     [Tooltip("Current player movement speed")]
     [SerializeField] float currentSpeed = 0f;
     [Tooltip("Multiplier for sprinting")]
@@ -15,6 +15,8 @@ public class IsometricPlayerController : MonoBehaviour
     [SerializeField] float dodgeDuration = .5f;
     [Tooltip("Player's dodge cooldown")]
     [SerializeField] float dodgeCooldown = 5f;
+    [Tooltip("Multiplier for dodging")]
+    [SerializeField] float dodgeMultiplier = 2.5f;
     [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
     [SerializeField] bool sprinting = false;
 
@@ -128,6 +130,12 @@ public class IsometricPlayerController : MonoBehaviour
             currentSpeed = baseMovementSpeed;
         }
 
+        //Dodging
+        if(Input.GetButtonDown("Dodge") && timeSinceDodge >= dodgeCooldown)
+        {
+            StartCoroutine("DodgeCoroutine");
+        }
+
         //Melee Attack
         if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
         {
@@ -144,6 +152,16 @@ public class IsometricPlayerController : MonoBehaviour
     {
         //Movement
         rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator DodgeCoroutine()
+    {
+        currentSpeed *= dodgeMultiplier;
+        timeSinceDodge = 0f;
+
+        yield return new WaitForSeconds(dodgeDuration);
+
+        currentSpeed /= dodgeMultiplier;
     }
 
     //Attacking

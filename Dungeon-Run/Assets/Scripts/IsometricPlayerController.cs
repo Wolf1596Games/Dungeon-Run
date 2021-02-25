@@ -62,6 +62,8 @@ public class IsometricPlayerController : MonoBehaviour
     private Camera main;
     private GameManager manager;
 
+    private Vector2 movement;
+
     private void Awake()
     {
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
@@ -73,26 +75,16 @@ public class IsometricPlayerController : MonoBehaviour
         currentSpeed = baseMovementSpeed;
     }
 
-    private void FixedUpdate()
-    {
-        //Movement
-        Vector2 currentPos = rb.position;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-        inputVector = Vector2.ClampMagnitude(inputVector, 1);
-        Vector2 movement = inputVector * currentSpeed;
-        Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
-        isoRenderer.SetDirection(movement);
-        rb.MovePosition(newPos);
-    }
-
     private void Update()
     {
         //Increment time variables
         timeSinceDodge += Time.deltaTime;
         timeSinceSwing += Time.deltaTime;
         timeSinceShot += Time.deltaTime;
+
+        //Assign x and y values of movement
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         //Get mouse position
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -136,8 +128,6 @@ public class IsometricPlayerController : MonoBehaviour
             currentSpeed = baseMovementSpeed;
         }
 
-        
-
         //Melee Attack
         if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
         {
@@ -148,6 +138,12 @@ public class IsometricPlayerController : MonoBehaviour
         {
             RangedAttack();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //Movement
+        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
     }
 
     //Attacking

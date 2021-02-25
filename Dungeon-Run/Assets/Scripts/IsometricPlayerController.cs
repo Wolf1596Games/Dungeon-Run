@@ -5,25 +5,41 @@ using UnityEngine;
 public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
-    [SerializeField] float baseMovementSpeed = 8f;
-    [SerializeField] float speed = 0f;
+    [Tooltip("Base player movement speed")]
+    [SerializeField] float baseMovementSpeed = 2f;
+    [Tooltip("Current player movement speed")]
+    [SerializeField] float currentSpeed = 0f;
+    [Tooltip("Multiplier for sprinting")]
     [SerializeField] float sprintMultiplier = 1.75f;
+    [Tooltip("Duration of the player's dodge")]
     [SerializeField] float dodgeDuration = .5f;
+    [Tooltip("Player's dodge cooldown")]
     [SerializeField] float dodgeCooldown = 5f;
+    [Tooltip("Multiplier for dodging")]
+    [SerializeField] float dodgeMultiplier = 2.5f;
+    [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
     [SerializeField] bool sprinting = false;
 
     [Header("Player Health")]
+    [Tooltip("Player's max health")]
     [SerializeField] public int maxHealth = 3;
+    [Tooltip("Player's current health")]
     [SerializeField] public int currentHealth = 3;
 
-    [Header("Player Fighting")]
+    [Header("Player Combat")]
+    [Tooltip("Player's damage per hit")]
     [SerializeField] public int damage = 1;
+    [Tooltip("Player's melee swing range")]
     [SerializeField] float swingRange = 1.5f;
+    [Tooltip("Time between player's melee attacks")]
     [SerializeField] float timeBetweenSwings = .35f;
+    [Tooltip("Time between player's ranged attacks")]
     [SerializeField] float timeBetweenShots = .2f;
 
     [Header("Projectile")]
+    [Tooltip("Prefab object for projectiles")]
     [SerializeField] GameObject projectilePrefab;
+    [Tooltip("Projectile's velocity when instantiated")]
     [SerializeField] float projectileSpeed = 6.5f;
 
     //Private movement variables
@@ -42,32 +58,23 @@ public class IsometricPlayerController : MonoBehaviour
     private bool movingRight = true;
 
     //References
+    //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
     private Camera main;
+    private GameManager manager;
+
+    private Vector2 movement;
 
     private void Awake()
     {
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         rb = GetComponent<Rigidbody2D>();
         main = FindObjectOfType<Camera>();
+        manager = FindObjectOfType<GameManager>();
 
         //Set speed to base speed
-        speed = baseMovementSpeed;
-    }
-
-    private void FixedUpdate()
-    {
-        //Movement
-        Vector2 currentPos = rb.position;
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        Vector2 inputVector = new Vector2(horizontalInput, verticalInput);
-        inputVector = Vector2.ClampMagnitude(inputVector, 1);
-        Vector2 movement = inputVector * speed;
-        Vector2 newPos = currentPos + movement * Time.fixedDeltaTime;
-        isoRenderer.SetDirection(movement);
-        rb.MovePosition(newPos);
+        currentSpeed = baseMovementSpeed;
     }
 
     private void Update()
@@ -76,6 +83,10 @@ public class IsometricPlayerController : MonoBehaviour
         timeSinceDodge += Time.deltaTime;
         timeSinceSwing += Time.deltaTime;
         timeSinceShot += Time.deltaTime;
+
+        //Assign x and y values of movement
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
         //Get mouse position
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -110,16 +121,20 @@ public class IsometricPlayerController : MonoBehaviour
         {
             sprinting = true;
 
-            speed *= sprintMultiplier;
+            currentSpeed *= sprintMultiplier;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             sprinting = false;
 
-            speed = baseMovementSpeed;
+            currentSpeed = baseMovementSpeed;
         }
 
-        
+        //Dodging
+        if(Input.GetButtonDown("Dodge") && timeSinceDodge >= dodgeCooldown)
+        {
+            StartCoroutine("DodgeCoroutine");
+        }
 
         //Melee Attack
         if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
@@ -131,6 +146,22 @@ public class IsometricPlayerController : MonoBehaviour
         {
             RangedAttack();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //Movement
+        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+    }
+
+    private IEnumerator DodgeCoroutine()
+    {
+        currentSpeed *= dodgeMultiplier;
+        timeSinceDodge = 0f;
+
+        yield return new WaitForSeconds(dodgeDuration);
+
+        currentSpeed /= dodgeMultiplier;
     }
 
     //Attacking
@@ -184,9 +215,18 @@ public class IsometricPlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            main.transform.SetParent(null);
+            Death();
+        }
+    }
+    public void Death()
+    {
+        main.transform.SetParent(null);
 
-            Destroy(gameObject);
+        //Destroy(gameObject);
+        if(!manager.astralPlane)
+        {
+            manager.astralPlane = true;
+            manager.ToAstralPlane();
         }
     }
 }

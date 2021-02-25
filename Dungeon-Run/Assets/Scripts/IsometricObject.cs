@@ -8,7 +8,7 @@ public class IsometricObject : MonoBehaviour
 {
     private const int IsometricRangePerYUnit = 20;
 
-    [Tooltip("Will use this object to comput z-order")]
+    [Tooltip("Will use this object to compute z-order")]
     public Transform target;
 
     [Tooltip("Use this to offset the object slightly in front of behind the Target object")]

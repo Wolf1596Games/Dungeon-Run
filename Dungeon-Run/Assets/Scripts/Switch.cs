@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
+    [Tooltip("Whether or not the player is in range")]
     public bool playerInRange = false;
+    [Tooltip("Whether or not the switch is active")]
     public bool active = false;
 
     private SpriteRenderer sprRenderer;
@@ -12,8 +14,6 @@ public class Switch : MonoBehaviour
     private void Awake()
     {
         sprRenderer = GetComponent<SpriteRenderer>();
-
-        sprRenderer.color = Color.yellow;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

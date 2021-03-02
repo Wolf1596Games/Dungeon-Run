@@ -19,12 +19,14 @@ public class IsometricPlayerController : MonoBehaviour
     [SerializeField] float dodgeMultiplier = 2.5f;
     [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
     [SerializeField] bool sprinting = false;
+    [Tooltip("Whether or not the player is slowed by something")]
+    [SerializeField] public bool slowed = false;
 
     [Header("Player Health")]
     [Tooltip("Player's max health")]
-    [SerializeField] public int maxHealth = 3;
+    [SerializeField] public int maxHealth = 6;
     [Tooltip("Player's current health")]
-    [SerializeField] public int currentHealth = 3;
+    [SerializeField] public int currentHealth = 6;
 
     [Header("Player Combat")]
     [Tooltip("Player's damage per hit")]

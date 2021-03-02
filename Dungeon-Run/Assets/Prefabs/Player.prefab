@@ -234,20 +234,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1520d96380025d45b30614bc4fed81a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 8
+  baseMovementSpeed: 2
   currentSpeed: 0
   sprintMultiplier: 1.75
   dodgeDuration: 0.5
   dodgeCooldown: 5
+  dodgeMultiplier: 2.5
   sprinting: 0
-  maxHealth: 3
-  currentHealth: 3
+  maxHealth: 6
+  currentHealth: 6
   damage: 1
   swingRange: 1.5
   timeBetweenSwings: 0.35
   timeBetweenShots: 0.2
   projectilePrefab: {fileID: 3627507295010798364, guid: 1a5b3fabccfb22f45b09c7b908430229, type: 3}
   projectileSpeed: 6.5
+  facingLeft: 0
+  facingRight: 0
 --- !u!114 &8562651514886054216
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,13 +7,14 @@ public enum EnemyState
     idle,
     walk,
     attack,
-    stagger
+    stagger,
+    cooldown
 }
 public class Enemy : MonoBehaviour
 {
     public EnemyState currentState;
-    public int health;
-    public int baseAtk;
+    public int maxHealth;
+    public int currentHealth;
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()

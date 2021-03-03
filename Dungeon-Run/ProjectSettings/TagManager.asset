@@ -16,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - Projectile
-  - Enemy
-  - Player
+  - Floors and Walls
   - Pickup
-  - 
+  - Player
+  - Enemies
+  - Projectile
   - 
   - 
   - 
@@ -44,6 +44,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer
+  - name: Floors
+    uniqueID: 4191169509
+    locked: 0
+  - name: Back Walls
     uniqueID: 1970071753
+    locked: 0
+  - name: Player
+    uniqueID: 121158421
+    locked: 0
+  - name: Front Walls
+    uniqueID: 1961536705
     locked: 0

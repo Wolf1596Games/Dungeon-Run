@@ -44,6 +44,8 @@ public class IsometricPlayerController : MonoBehaviour
     [Tooltip("Projectile's velocity when instantiated")]
     [SerializeField] float projectileSpeed = 6.5f;
 
+    public bool isActivePlayer = false;
+
     //Private movement variables
     private float horizontalMovement = 0f;
     private float verticalMovement = 0f;
@@ -81,79 +83,85 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void Update()
     {
-        //Increment time variables
-        timeSinceDodge += Time.deltaTime;
-        timeSinceSwing += Time.deltaTime;
-        timeSinceShot += Time.deltaTime;
-
-        //Assign x and y values of movement
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        //Get mouse position
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0;
-
-        //Determine which way the player should fire
-        if (mousePos.x <= transform.position.x)
+        if(isActivePlayer)
         {
-            facingLeft = true;
-            facingRight = false;
-        }
-        else
-        {
-            facingRight = true;
-            facingLeft = false;
-        }
+            //Increment time variables
+            timeSinceDodge += Time.deltaTime;
+            timeSinceSwing += Time.deltaTime;
+            timeSinceShot += Time.deltaTime;
 
-        //Determine which way the player is facing
-        if (rb.velocity.x < 0)
-        {
-            movingLeft = true;
-            movingRight = false;
-        }
-        else if (rb.velocity.x > 0)
-        {
-            movingLeft = false;
-            movingRight = true;
-        }
+            //Assign x and y values of movement
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        //Sprinting
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            sprinting = true;
+            //Get mouse position
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePos.z = 0;
 
-            currentSpeed *= sprintMultiplier;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            sprinting = false;
+            //Determine which way the player should fire
+            if (mousePos.x <= transform.position.x)
+            {
+                facingLeft = true;
+                facingRight = false;
+            }
+            else
+            {
+                facingRight = true;
+                facingLeft = false;
+            }
 
-            currentSpeed = baseMovementSpeed;
-        }
+            //Determine which way the player is facing
+            if (rb.velocity.x < 0)
+            {
+                movingLeft = true;
+                movingRight = false;
+            }
+            else if (rb.velocity.x > 0)
+            {
+                movingLeft = false;
+                movingRight = true;
+            }
 
-        //Dodging
-        if(Input.GetButtonDown("Dodge") && timeSinceDodge >= dodgeCooldown)
-        {
-            StartCoroutine("DodgeCoroutine");
-        }
+            //Sprinting
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                sprinting = true;
 
-        //Melee Attack
-        if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
-        {
-            MeleeAttack();
-        }
-        //Ranged Attack
-        if (Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
-        {
-            RangedAttack();
+                currentSpeed *= sprintMultiplier;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                sprinting = false;
+
+                currentSpeed = baseMovementSpeed;
+            }
+
+            //Dodging
+            if (Input.GetButtonDown("Dodge") && timeSinceDodge >= dodgeCooldown)
+            {
+                StartCoroutine("DodgeCoroutine");
+            }
+
+            //Melee Attack
+            if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
+            {
+                MeleeAttack();
+            }
+            //Ranged Attack
+            if (Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
+            {
+                RangedAttack();
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        //Movement
-        rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+        if (isActivePlayer)
+        {
+            //Movement
+            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime); 
+        }
     }
 
     private IEnumerator DodgeCoroutine()

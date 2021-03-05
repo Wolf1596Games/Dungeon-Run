@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class HealthPickup : MonoBehaviour
 {
-    IsometricPlayerController player;
+    GameManager manager;
+    IsometricPlayerController activePlayer;
+
+    private void Awake()
+    {
+        manager = FindObjectOfType<GameManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<IsometricPlayerController>();
+        activePlayer = manager.activePlayer;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
        if(collision.tag == "Player")
         {
-            if (player.currentHealth < player.maxHealth)
+            if (activePlayer.currentHealth < activePlayer.maxHealth)
             {
-                player.currentHealth += 1;
+                activePlayer.currentHealth += 1;
 
                 Destroy(gameObject);
             }

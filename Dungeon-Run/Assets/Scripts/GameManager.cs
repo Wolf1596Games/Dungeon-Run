@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     public IsometricPlayerController[] players;
     public IsometricPlayerController activePlayer;
+    public int currentSceneIndex;
+
+    Scene scene;
 
     private CameraFollow mainCam;
 
@@ -36,6 +39,12 @@ public class GameManager : MonoBehaviour
         ChooseActivePlayer();
     }
 
+    private void Update()
+    {
+        scene = SceneManager.GetActiveScene();
+        currentSceneIndex = scene.buildIndex;
+    }
+
     public void ToAstralPlane()
     {
         SceneManager.LoadScene("TestScene");
@@ -44,12 +53,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("GameOver");
     }
+    public void ToNextLevel()
+    {
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
+
 
     public IsometricPlayerController[] GetPlayers()
     {
         return FindObjectsOfType<IsometricPlayerController>();
     }
-
     public void ChooseActivePlayer()
     {
         activePlayer = players[Random.Range(0, players.Length)];

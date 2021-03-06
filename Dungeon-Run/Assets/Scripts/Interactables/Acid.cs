@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class Acid : MonoBehaviour
 {
-    GameManager manager;
-    IsometricPlayerController activePlayer;
+    IsometricPlayerController player;
     public int damage = 1;
     public float timeBetweenDamaging = 5f;
+    public float slowMultiplier = .65f;
     private float timeSinceDamaged = 0f;
     private bool playerInAcid = false;
 
-    private void Awake()
-    {
-        manager = FindObjectOfType<GameManager>();
-        activePlayer = manager.activePlayer;
-    }
+    
 
     private void Update()
     {
@@ -25,7 +21,7 @@ public class Acid : MonoBehaviour
         {
             timeSinceDamaged = 0f;
 
-            activePlayer.TakeDamage(damage);
+            player.TakeDamage(damage);
         }
     }
 
@@ -34,8 +30,9 @@ public class Acid : MonoBehaviour
         if(collision.tag == "Player")
         {
             playerInAcid = true;
+            player = collision.GetComponent<IsometricPlayerController>();
 
-            activePlayer.slowed = true;
+            player.currentSpeed *= slowMultiplier;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -43,8 +40,8 @@ public class Acid : MonoBehaviour
         if(collision.tag == "Player")
         {
             playerInAcid = false;
-
-            activePlayer.slowed = false;
+            player.currentSpeed /= slowMultiplier;
+            player = null;
         }
     }
 }

@@ -8,7 +8,7 @@ public class IsometricPlayerController : MonoBehaviour
     [Tooltip("Base player movement speed")]
     [SerializeField] float baseMovementSpeed = 2f;
     [Tooltip("Current player movement speed")]
-    [SerializeField] float currentSpeed = 0f;
+    [SerializeField] public float currentSpeed = 0f;
     [Tooltip("Multiplier for sprinting")]
     [SerializeField] float sprintMultiplier = 1.75f;
     [Tooltip("Duration of the player's dodge")]
@@ -19,8 +19,6 @@ public class IsometricPlayerController : MonoBehaviour
     [SerializeField] float dodgeMultiplier = 2.5f;
     [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
     [SerializeField] bool sprinting = false;
-    [Tooltip("Whether or not the player is slowed by something")]
-    [SerializeField] public bool slowed = false;
 
     [Header("Player Health")]
     [Tooltip("Player's max health")]
@@ -56,10 +54,6 @@ public class IsometricPlayerController : MonoBehaviour
     private float timeSinceShot = .35f;
     private bool facingLeft = false;
     private bool facingRight = false;
-
-    //Other private variables
-    private bool movingLeft = false;
-    private bool movingRight = true;
 
     //References
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
@@ -108,18 +102,6 @@ public class IsometricPlayerController : MonoBehaviour
             {
                 facingRight = true;
                 facingLeft = false;
-            }
-
-            //Determine which way the player is facing
-            if (rb.velocity.x < 0)
-            {
-                movingLeft = true;
-                movingRight = false;
-            }
-            else if (rb.velocity.x > 0)
-            {
-                movingLeft = false;
-                movingRight = true;
             }
 
             //Sprinting

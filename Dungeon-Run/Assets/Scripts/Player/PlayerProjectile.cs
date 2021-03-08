@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerProjectile : MonoBehaviour
 {
+    [Tooltip("Projectile's lifespan")]
     [SerializeField] float lifespan = 10f;
+    [Tooltip("Time since the object was instantiated. FOR DEBUG ONLY")]
     [SerializeField] float timeSinceCreated = 0f;
 
     IsometricPlayerController player;

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Dungeon-Run/Assets/Temp/Placeholder02.png.meta
-guid: df3f3d2c7f4c4624ca0b43215888c0ef
-=======
-guid: 7e76b1173740e92419425b43d68f6f61
->>>>>>> main:Dungeon-Run/Assets/Sprites/4WhiteboxV2_0001_Sloperight.png.meta
+guid: fd0f0d55840d2e9438a33c0c587dd005
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +63,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -79,7 +75,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 32
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1

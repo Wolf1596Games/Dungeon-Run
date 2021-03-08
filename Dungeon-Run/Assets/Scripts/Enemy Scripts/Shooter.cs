@@ -8,7 +8,7 @@ public class Shooter : Enemy
     public Transform target;
     public float detectRad;
     public float timer;
-    private float inTimer;
+    private float inTimer = 3;
     public bool isCooling;
 
     // Start is called before the first frame update
@@ -26,12 +26,17 @@ public class Shooter : Enemy
 
     void CheckDistance()
     {
-        if (Vector3.Distance(target.position, transform.position) <= detectRad)
+        if (Vector3.Distance(target.position, transform.position) <= detectRad && isCooling == false)
         {
             ChangeState(EnemyState.attack);
             Vector2 tempVector = target.transform.position - transform.position;
             GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
+            isCooling = true;
             current.GetComponent<Enemy_Projectile>().Launch(tempVector);
+        }
+        else if (isCooling)
+        {
+            Cooldown();
         }
 
     }

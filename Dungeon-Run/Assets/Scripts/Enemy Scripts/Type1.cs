@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Type1 : Enemy
 {
-
     public Transform target;
     public float chaseRad;
     public float atkRad;
@@ -34,30 +33,36 @@ public class Type1 : Enemy
     {
         if (Vector3.Distance(target.position, transform.position) <= chaseRad && Vector3.Distance(target.position, transform.position) > atkRad)
         {
-            if(currentState == EnemyState.idle || currentState == EnemyState.walk || currentState == EnemyState.attack)
-            {
-                enemyAnim.SetBool("isMoving", true);
-                enemyAnim.SetBool("isAttacking", false);
-                enemyAnim.SetFloat("moveX", (target.position.x - transform.position.x));
-                enemyAnim.SetFloat("moveY", (target.position.y - transform.position.y));
-                transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
-                isCooling = false;
-                ChangeState(EnemyState.walk);
-
-                
-            }
-           
-
+            FollowPlayer();
         }
-         if ((currentState == EnemyState.walk || currentState == EnemyState.attack) && Vector3.Distance(target.position, transform.position) <= atkRad && isCooling == false)
+
+        else if (Vector3.Distance(target.position, transform.position) > chaseRad)
+        {
+            ResetPosition();
+        }
+        if ((currentState == EnemyState.walk || currentState == EnemyState.attack) && Vector3.Distance(target.position, transform.position) <= atkRad && isCooling == false)
         {
             Attack();
 
         }
        else if (currentState == EnemyState.attack && isCooling == true)
         {
-            
             Cooldown();
+        }
+
+    }
+
+    void FollowPlayer()
+    {
+        if (currentState == EnemyState.idle || currentState == EnemyState.walk || currentState == EnemyState.attack)
+        {
+            enemyAnim.SetBool("isMoving", true);
+            enemyAnim.SetBool("isAttacking", false);
+            enemyAnim.SetFloat("moveX", (target.position.x - transform.position.x));
+            enemyAnim.SetFloat("moveY", (target.position.y - transform.position.y));
+            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            isCooling = false;
+            ChangeState(EnemyState.walk);
         }
 
     }
@@ -88,7 +93,29 @@ public class Type1 : Enemy
         isCooling = true;
     }
 
-  
+    public void ResetPosition()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, homePos.position, moveSpeed * Time.deltaTime);
+        enemyAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
+        enemyAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
+
+        if (transform.position == homePos.position)
+        {
+            enemyAnim.SetBool("isMoving", false);
+            ChangeState(EnemyState.idle) ;
+        }
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+        currentHealth -= damageTaken;
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void ChangeState(EnemyState newState)
     {
         if (currentState != newState)

@@ -22,7 +22,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
         string[] directionArray = null;
 
         //measure the magnitude of the input
-        if(direction.magnitude < .01f)
+        if (direction.magnitude < .01f)
         {
             //if we are basically standing still, we'll use the Static states
             directionArray = staticDirections;
@@ -56,7 +56,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
         angle += halfStep;
 
         //if angle is negative, then let's make it positiove by adding 3160 to wrap it around.
-        if(angle < 0)
+        if (angle < 0)
         {
             angle += 360;
         }

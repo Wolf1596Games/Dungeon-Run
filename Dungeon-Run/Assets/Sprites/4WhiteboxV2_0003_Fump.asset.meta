@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Dungeon-Run/Assets/Animations/Enemy/S_WalkLeft.anim.meta
+guid: db2f8fa34cd33804d9bd14d2392ab0e5
+=======
 guid: fba61b27443a70446afca29a80f5137a
+>>>>>>> main:Dungeon-Run/Assets/Sprites/4WhiteboxV2_0003_Fump.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0

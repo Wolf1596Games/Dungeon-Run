@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Dungeon-Run/Assets/Animations/Enemy.meta
+guid: 0253c6c29eaefe8458ace515ad8b3158
+=======
 guid: 174d08d8b2fce8b45b209bb68cd7c868
+>>>>>>> main:Dungeon-Run/Assets/Tile Set.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

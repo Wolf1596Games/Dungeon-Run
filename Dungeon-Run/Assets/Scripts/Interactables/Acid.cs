@@ -7,13 +7,11 @@ public class Acid : MonoBehaviour
     IsometricPlayerController player;
     public int damage = 1;
     public float timeBetweenDamaging = 5f;
+    public float slowMultiplier = .65f;
     private float timeSinceDamaged = 0f;
     private bool playerInAcid = false;
 
-    private void Awake()
-    {
-        player = FindObjectOfType<IsometricPlayerController>();
-    }
+    
 
     private void Update()
     {
@@ -32,8 +30,9 @@ public class Acid : MonoBehaviour
         if(collision.tag == "Player")
         {
             playerInAcid = true;
+            player = collision.GetComponent<IsometricPlayerController>();
 
-            player.slowed = true;
+            player.currentSpeed *= slowMultiplier;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -41,8 +40,8 @@ public class Acid : MonoBehaviour
         if(collision.tag == "Player")
         {
             playerInAcid = false;
-
-            player.slowed = false;
+            player.currentSpeed /= slowMultiplier;
+            player = null;
         }
     }
 }

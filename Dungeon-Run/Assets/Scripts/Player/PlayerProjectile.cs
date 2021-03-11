@@ -12,13 +12,11 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] float moveSpeed = 75f;
 
     IsometricPlayerController player;
-    Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<IsometricPlayerController>();
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -28,13 +26,16 @@ public class PlayerProjectile : MonoBehaviour
 
         if(timeSinceCreated >= lifespan)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
     public void Setup(Vector3 shootDir)
     {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.AddForce(shootDir * moveSpeed, ForceMode2D.Impulse);
+
+        transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(shootDir));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,5 +46,14 @@ public class PlayerProjectile : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public float GetAngleFromVectorFloat(Vector3 dir)
+    {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n < 0) n += 360;
+
+        return n;
     }
 }

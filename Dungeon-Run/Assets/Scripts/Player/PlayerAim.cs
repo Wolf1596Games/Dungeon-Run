@@ -12,6 +12,12 @@ public class PlayerAim : MonoBehaviour
         public Vector3 shootPosition;
     }
 
+    [Tooltip("Delay between when shots can be fired")]
+    [SerializeField] float timeBetweenShots = .2f;
+
+    private float timeSinceLastShot = .2f;
+
+
     private Transform aimTransform;
     private Transform aimGunEndPointTransform;
     private IsometricPlayerController controller;
@@ -29,6 +35,8 @@ public class PlayerAim : MonoBehaviour
     {
         if (controller.isActivePlayer)
         {
+            timeSinceLastShot += Time.deltaTime;
+
             HandleAiming();
             HandleShooting();
         }
@@ -45,7 +53,7 @@ public class PlayerAim : MonoBehaviour
 
     private void HandleShooting()
     {
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetButtonDown("Fire2") && timeSinceLastShot >= timeBetweenShots)
         {
             Vector3 mousePosition = GetMouseWorldPosition();
 

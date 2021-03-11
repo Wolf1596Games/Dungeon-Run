@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  activeRoom: {fileID: 0}
 --- !u!61 &1030524569258085970
 BoxCollider2D:
   m_ObjectHideFlags: 0

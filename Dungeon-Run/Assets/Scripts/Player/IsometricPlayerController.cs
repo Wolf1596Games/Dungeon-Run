@@ -79,8 +79,10 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
     {
+        Debug.Log("Instantiating new projectile");
         Transform projectileTransform = Instantiate(projectilePrefab, e.gunEndPointPosition, Quaternion.identity);
 
+        Debug.Log("Calculating shootDir: " + (e.shootPosition - e.gunEndPointPosition).normalized);
         Vector3 shootDir = (e.shootPosition - e.gunEndPointPosition).normalized;
         projectileTransform.GetComponent<PlayerProjectile>().Setup(shootDir);
     }

@@ -10737,9 +10737,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astralPlane: 0
-  players: []
+  astralPlaneScene: 
   activePlayer: {fileID: 0}
   currentSceneIndex: 0
+  lastSceneIndex: 0
 --- !u!4 &616298846
 Transform:
   m_ObjectHideFlags: 0
@@ -42924,7 +42925,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100603, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100603, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43012,7 +43013,7 @@ Transform:
   - {fileID: 831243792}
   - {fileID: 639939477}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1719928290 stripped
 GameObject:

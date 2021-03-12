@@ -128,11 +128,6 @@ public class IsometricPlayerController : MonoBehaviour
             {
                 MeleeAttack();
             }
-            ////Ranged Attack
-            //if (Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
-            //{
-            //    RangedAttack();
-            //}
         }
     }
 
@@ -158,21 +153,21 @@ public class IsometricPlayerController : MonoBehaviour
     //Attacking
     public void MeleeAttack()
     {
-        TestDummy[] dummies = FindObjectsOfType<TestDummy>();
+        Type1[] enemies = FindObjectsOfType<Type1>();
 
-        foreach (TestDummy dummy in dummies)
+        foreach (Type1 enemy in enemies)
         {
             //If the dummy is within swingRange, attack
-            if (Vector2.Distance(transform.position, dummy.transform.position) <= swingRange)
+            if (Vector2.Distance(transform.position, enemy.transform.position) <= swingRange)
             {
                 //Check to make sure the dummy is on the correct side
-                if (facingLeft == true && dummy.transform.position.x <= transform.position.x)
+                if (facingLeft == true && enemy.transform.position.x <= transform.position.x)
                 {
-                    dummy.TakeDamage(damage);
+                    enemy.TakeDamage(damage);
                 }
-                else if (facingRight == true && dummy.transform.position.x > transform.position.x)
+                else if (facingRight == true && enemy.transform.position.x > transform.position.x)
                 {
-                    dummy.TakeDamage(damage);
+                    enemy.TakeDamage(damage);
                 }
                 else
                 {
@@ -183,21 +178,6 @@ public class IsometricPlayerController : MonoBehaviour
 
         timeSinceSwing = 0f;
     }
-    //public void RangedAttack()
-    //{
-    //    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
-
-    //    if (facingLeft == true)
-    //    {
-    //        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.left * projectileSpeed;
-    //    }
-    //    else
-    //    {
-    //        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
-    //    }
-
-    //    timeSinceShot = 0f;
-    //}
 
     //Taking damage
     public void TakeDamage(int damageTaken)

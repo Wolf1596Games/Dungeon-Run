@@ -5,6 +5,7 @@ using UnityEngine;
 public class BasicDoor : MonoBehaviour
 {
     [SerializeField] private Switch activatorSwitch;
+    [SerializeField] private PressurePlate activatorPlate;
     [SerializeField] private string triggerName;
 
     private Collider2D collider2d;
@@ -19,7 +20,12 @@ public class BasicDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activatorSwitch.active)
+        if(activatorSwitch != null && activatorSwitch.active)
+        {
+            collider2d.isTrigger = true;
+            animator.SetTrigger(triggerName);
+        }
+        else if(activatorPlate != null && activatorPlate.active)
         {
             collider2d.isTrigger = true;
             animator.SetTrigger(triggerName);

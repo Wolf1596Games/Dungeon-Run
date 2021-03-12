@@ -46,7 +46,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TestDummy>().TakeDamage(activePlayer.damage);
+            collision.gameObject.GetComponent<Type1>().TakeDamage(activePlayer.damage);
 
             Destroy(gameObject);
         }

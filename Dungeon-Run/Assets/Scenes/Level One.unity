@@ -44004,7 +44004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eaaf6995095a8e41b83ed1c4036bc50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenShots: 0.2
+  timeBetweenShots: 1
 --- !u!1 &1582578670
 GameObject:
   m_ObjectHideFlags: 0
@@ -44426,6 +44426,14 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 2864159332020391867, guid: fbcc8bfb2f17b3447ab958f6ecd22589, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: timeBetweenShots
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: timeBetweenSwings
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Enabled
       value: 1

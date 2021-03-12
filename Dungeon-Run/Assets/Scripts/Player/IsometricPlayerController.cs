@@ -38,7 +38,7 @@ public class IsometricPlayerController : MonoBehaviour
 
     [Header("Projectile")]
     [Tooltip("Prefab object for projectiles")]
-    [SerializeField] GameObject projectilePrefab;
+    [SerializeField] Transform projectilePrefab;
     [Tooltip("Projectile's velocity when instantiated")]
     [SerializeField] float projectileSpeed = 6.5f;
 
@@ -61,6 +61,7 @@ public class IsometricPlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Camera main;
     private GameManager manager;
+    private PlayerAim playerAim;
 
     private Vector2 movement;
 
@@ -70,9 +71,18 @@ public class IsometricPlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         main = FindObjectOfType<Camera>();
         manager = FindObjectOfType<GameManager>();
+        GetComponent<PlayerAim>().OnShoot += IsometricPlayerController_OnShoot;
 
         //Set speed to base speed
         currentSpeed = baseMovementSpeed;
+    }
+
+    private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
+    {
+        Transform projectileTransform = Instantiate(projectilePrefab, e.gunEndPointPosition, Quaternion.identity);
+
+        Vector3 shootDir = (e.shootPosition - e.gunEndPointPosition).normalized;
+        projectileTransform.GetComponent<PlayerProjectile>().Setup(shootDir);
     }
 
     private void Update()
@@ -129,11 +139,11 @@ public class IsometricPlayerController : MonoBehaviour
             {
                 MeleeAttack();
             }
-            //Ranged Attack
-            if (Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
-            {
-                RangedAttack();
-            }
+            ////Ranged Attack
+            //if (Input.GetButtonDown("Fire2") && timeSinceShot >= timeBetweenShots)
+            //{
+            //    RangedAttack();
+            //}
         }
     }
 
@@ -184,21 +194,21 @@ public class IsometricPlayerController : MonoBehaviour
 
         timeSinceSwing = 0f;
     }
-    public void RangedAttack()
-    {
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
+    //public void RangedAttack()
+    //{
+    //    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity) as GameObject;
 
-        if (facingLeft == true)
-        {
-            projectile.GetComponent<Rigidbody2D>().velocity = Vector2.left * projectileSpeed;
-        }
-        else
-        {
-            projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
-        }
+    //    if (facingLeft == true)
+    //    {
+    //        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.left * projectileSpeed;
+    //    }
+    //    else
+    //    {
+    //        projectile.GetComponent<Rigidbody2D>().velocity = Vector2.right * projectileSpeed;
+    //    }
 
-        timeSinceShot = 0f;
-    }
+    //    timeSinceShot = 0f;
+    //}
 
     //Taking damage
     public void TakeDamage(int damageTaken)
@@ -212,9 +222,7 @@ public class IsometricPlayerController : MonoBehaviour
     }
     public void Death()
     {
-        main.transform.SetParent(null);
-
-        //Destroy(gameObject);
+        Destroy(gameObject);
         if(!manager.astralPlane)
         {
             manager.astralPlane = true;

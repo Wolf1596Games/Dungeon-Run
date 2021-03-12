@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour
     [Header("Plane Management")]
     [Tooltip("Controls which \"plane\" the player is in.")]
     public bool astralPlane = false;
+    [Tooltip("Name of the scene the player should be transferred to upon death")]
+    [SerializeField] private string astralPlaneScene;
 
-    public IsometricPlayerController[] players;
+    private IsometricPlayerController[] players;
     public IsometricPlayerController activePlayer;
     public int currentSceneIndex;
+    public int lastSceneIndex;
 
     Scene scene;
 
@@ -47,7 +50,11 @@ public class GameManager : MonoBehaviour
 
     public void ToAstralPlane()
     {
-        SceneManager.LoadScene("TestScene");
+        StartCoroutine("AstralPlaneCoroutine");
+    }
+    public void FromAstralPlane()
+    {
+        StartCoroutine("FromAstralPlaneCoroutine");
     }
     public void GameOver()
     {
@@ -55,9 +62,39 @@ public class GameManager : MonoBehaviour
     }
     public void ToNextLevel()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        StartCoroutine("NextLevelCoroutine");
     }
 
+    private IEnumerator AstralPlaneCoroutine()
+    {
+        lastSceneIndex = currentSceneIndex;
+        SceneManager.LoadScene(astralPlaneScene);
+
+        yield return new WaitForSeconds(1f);
+
+        players = GetPlayers();
+        ChooseActivePlayer();
+    }
+    private IEnumerator FromAstralPlaneCoroutine()
+    {
+        SceneManager.LoadScene(lastSceneIndex);
+
+        yield return new WaitForSeconds(1f);
+
+        players = GetPlayers();
+        ChooseActivePlayer();
+    }
+    private IEnumerator NextLevelCoroutine()
+    {
+        lastSceneIndex = currentSceneIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        yield return new WaitForSeconds(1f);
+
+        players = GetPlayers();
+
+        ChooseActivePlayer();
+    }
 
     public IsometricPlayerController[] GetPlayers()
     {

@@ -55,9 +55,19 @@ public class GameManager : MonoBehaviour
     }
     public void ToNextLevel()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        StartCoroutine("NextLevelCoroutine");
     }
 
+    private IEnumerator NextLevelCoroutine()
+    {
+        SceneManager.LoadScene(currentSceneIndex + 1);
+
+        yield return new WaitForSeconds(1f);
+
+        players = GetPlayers();
+
+        ChooseActivePlayer();
+    }
 
     public IsometricPlayerController[] GetPlayers()
     {

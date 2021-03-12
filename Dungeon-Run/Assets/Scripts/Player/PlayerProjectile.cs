@@ -11,12 +11,14 @@ public class PlayerProjectile : MonoBehaviour
     [Tooltip("Projectile velocity")]
     [SerializeField] float moveSpeed = 75f;
 
-    IsometricPlayerController player;
+    GameManager manager;
+    IsometricPlayerController activePlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<IsometricPlayerController>();
+        manager = FindObjectOfType<GameManager>();
+        activePlayer = manager.activePlayer;
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TestDummy>().TakeDamage(player.damage);
+            collision.gameObject.GetComponent<TestDummy>().TakeDamage(activePlayer.damage);
 
             Destroy(gameObject);
         }

@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 4960574374706100581}
   - component: {fileID: 1673697681310446439}
   m_Layer: 9
-  m_Name: Enemy 1
+  m_Name: MeleePursuer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   currentHealth: 0
   moveSpeed: 5
   target: {fileID: 0}
-  chaseRad: 10
+  chaseRad: 3
   atkRad: 1.2
   timer: 0
   homePos: {fileID: 0}

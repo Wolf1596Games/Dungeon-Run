@@ -55,6 +55,8 @@ public class PlayerAim : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire2") && timeSinceLastShot >= timeBetweenShots)
         {
+            timeSinceLastShot = 0f;
+
             Debug.Log("Beginning projectile firing sequence");
             Vector3 mousePosition = GetMouseWorldPosition();
 

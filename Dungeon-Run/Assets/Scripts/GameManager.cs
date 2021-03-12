@@ -48,6 +48,10 @@ public class GameManager : MonoBehaviour
         currentSceneIndex = scene.buildIndex;
     }
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene("Level One");
+    }
     public void ToAstralPlane()
     {
         StartCoroutine("AstralPlaneCoroutine");
@@ -63,6 +67,10 @@ public class GameManager : MonoBehaviour
     public void ToNextLevel()
     {
         StartCoroutine("NextLevelCoroutine");
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     private IEnumerator AstralPlaneCoroutine()

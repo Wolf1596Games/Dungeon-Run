@@ -13,7 +13,7 @@ public class BasicDoor : MonoBehaviour
 
     private void Awake()
     {
-        collider2d = GetComponent<Collider2D>();
+        collider2d = GetComponentInChildren<Collider2D>();
         animator = GetComponent<Animator>();
     }
 

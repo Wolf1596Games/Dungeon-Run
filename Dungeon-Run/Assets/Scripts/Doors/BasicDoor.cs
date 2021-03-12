@@ -9,12 +9,14 @@ public class BasicDoor : MonoBehaviour
     [SerializeField] private string triggerName;
 
     private Collider2D collider2d;
-    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    //private Animator animator;
 
     private void Awake()
     {
         collider2d = GetComponentInChildren<Collider2D>();
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,12 +25,14 @@ public class BasicDoor : MonoBehaviour
         if(activatorSwitch != null && activatorSwitch.active)
         {
             collider2d.isTrigger = true;
-            animator.SetTrigger(triggerName);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+            //animator.SetTrigger(triggerName);
         }
         else if(activatorPlate != null && activatorPlate.active)
         {
             collider2d.isTrigger = true;
-            animator.SetTrigger(triggerName);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0);
+            //animator.SetTrigger(triggerName);
         }
     }
 }

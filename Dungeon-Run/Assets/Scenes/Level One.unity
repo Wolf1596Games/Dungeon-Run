@@ -44111,26 +44111,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1719928290 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2096845786176671389, guid: 0d06dbf1a228529428daa8ea2144f991, type: 3}
-  m_PrefabInstance: {fileID: 2096845787879295871}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1719928294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1719928290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ab8b3299ab22145b262a9ae06d26f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: 0
-  offsetSmoothing: 1
 --- !u!1 &1818817641
 GameObject:
   m_ObjectHideFlags: 0
@@ -44437,6 +44417,10 @@ PrefabInstance:
     - target: {fileID: 1465911184, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: projectileSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: projectilePrefab

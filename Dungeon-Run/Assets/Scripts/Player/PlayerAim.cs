@@ -57,7 +57,6 @@ public class PlayerAim : MonoBehaviour
         {
             timeSinceLastShot = 0f;
 
-            Debug.Log("Beginning projectile firing sequence");
             Vector3 mousePosition = GetMouseWorldPosition();
 
             aimAnimator.SetTrigger("Shoot");

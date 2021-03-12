@@ -34,9 +34,7 @@ public class PlayerProjectile : MonoBehaviour
 
     public void Setup(Vector3 shootDir)
     {
-        Debug.Log("Setting up projectile");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        Debug.Log("Adding force of " + (shootDir * moveSpeed));
         rb.AddForce(shootDir * moveSpeed, ForceMode2D.Impulse);
 
         transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(shootDir));

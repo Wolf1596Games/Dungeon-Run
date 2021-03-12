@@ -31,14 +31,10 @@ public class IsometricPlayerController : MonoBehaviour
     [SerializeField] float swingRange = 1.5f;
     [Tooltip("Time between player's melee attacks")]
     [SerializeField] float timeBetweenSwings = .35f;
-    [Tooltip("Time between player's ranged attacks")]
-    [SerializeField] float timeBetweenShots = .2f;
 
     [Header("Projectile")]
     [Tooltip("Prefab object for projectiles")]
     [SerializeField] Transform projectilePrefab;
-    [Tooltip("Projectile's velocity when instantiated")]
-    [SerializeField] float projectileSpeed = 6.5f;
 
     public bool isActivePlayer = false;
 
@@ -71,10 +67,8 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
     {
-        Debug.Log("Instantiating new projectile");
         Transform projectileTransform = Instantiate(projectilePrefab, e.gunEndPointPosition, Quaternion.identity);
 
-        Debug.Log("Calculating shootDir: " + (e.shootPosition - e.gunEndPointPosition).normalized);
         Vector3 shootDir = (e.shootPosition - e.gunEndPointPosition).normalized;
         projectileTransform.GetComponent<PlayerProjectile>().Setup(shootDir);
     }

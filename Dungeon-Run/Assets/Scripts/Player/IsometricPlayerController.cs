@@ -222,9 +222,7 @@ public class IsometricPlayerController : MonoBehaviour
     }
     public void Death()
     {
-        main.transform.SetParent(null);
-
-        //Destroy(gameObject);
+        Destroy(gameObject);
         if(!manager.astralPlane)
         {
             manager.astralPlane = true;

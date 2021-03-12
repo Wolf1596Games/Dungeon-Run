@@ -10891,7 +10891,7 @@ PrefabInstance:
       objectReference: {fileID: 430703626}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43187,6 +43187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleePursuer Tedd
       objectReference: {fileID: 0}
+    - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: atkRad
       value: 0.8
@@ -43197,7 +43201,7 @@ PrefabInstance:
       objectReference: {fileID: 701075828}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43390,13 +43394,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1673697681574784702, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Size.x
       value: 0.15018797
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Size.y
-      value: 0.19592166
+      value: 0.2105999
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Offset.x
@@ -43404,11 +43412,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Offset.y
-      value: -0.081239104
+      value: -0.088578224
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: Golem Stand-in
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: timer
@@ -43424,7 +43436,7 @@ PrefabInstance:
       objectReference: {fileID: 726471082}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43529,7 +43541,7 @@ PrefabInstance:
       objectReference: {fileID: 1984405229}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43679,7 +43691,7 @@ PrefabInstance:
       objectReference: {fileID: 1582578671}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43784,7 +43796,7 @@ PrefabInstance:
       objectReference: {fileID: 1696360140}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -43889,7 +43901,7 @@ PrefabInstance:
       objectReference: {fileID: 1320792685}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: chaseRad
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: maxHealth
@@ -44029,6 +44041,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenShots: 1
+--- !u!1 &1556925319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1556925320}
+  - component: {fileID: 1556925321}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1556925320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556925319}
+  m_LocalRotation: {x: -0, y: -0, z: 0.2202935, w: 0.97543365}
+  m_LocalPosition: {x: 0.034499288, y: 0.026309371, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2052766168}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.453}
+--- !u!61 &1556925321
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556925319}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.10682598, y: -0.10540664}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3768036, y: 0.46907538}
+  m_EdgeRadius: 0
 --- !u!1 &1582578670
 GameObject:
   m_ObjectHideFlags: 0
@@ -44331,7 +44400,7 @@ GameObject:
   - component: {fileID: 2052766168}
   - component: {fileID: 2052766167}
   - component: {fileID: 2052766166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Small Door 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44351,6 +44420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activatorSwitch: {fileID: 0}
+  activatorPlate: {fileID: 1834404964}
   triggerName: 
 --- !u!212 &2052766167
 SpriteRenderer:
@@ -44389,18 +44459,18 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1970071753
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7df01939f38fefa41a9376698612c8c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.49, y: 0.908}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2052766168
@@ -44411,9 +44481,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052766165}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.0366852, y: 1.4935983, z: -65.86184}
+  m_LocalPosition: {x: 1.58, y: 1.85, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1556925320}
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

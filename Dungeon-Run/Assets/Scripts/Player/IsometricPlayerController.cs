@@ -17,8 +17,6 @@ public class IsometricPlayerController : MonoBehaviour
     [SerializeField] float dodgeCooldown = 5f;
     [Tooltip("Multiplier for dodging")]
     [SerializeField] float dodgeMultiplier = 2.5f;
-    [Tooltip("Shows whether the player is sprinting or not. FOR DEBUG ONLY")]
-    [SerializeField] bool sprinting = false;
 
     [Header("Player Health")]
     [Tooltip("Player's max health")]
@@ -45,13 +43,10 @@ public class IsometricPlayerController : MonoBehaviour
     public bool isActivePlayer = false;
 
     //Private movement variables
-    private float horizontalMovement = 0f;
-    private float verticalMovement = 0f;
     private float timeSinceDodge = 5f;
 
     //Private fighting variables
     private float timeSinceSwing = .35f;
-    private float timeSinceShot = .35f;
     private bool facingLeft = false;
     private bool facingRight = false;
 
@@ -59,9 +54,7 @@ public class IsometricPlayerController : MonoBehaviour
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
-    private Camera main;
     private GameManager manager;
-    private PlayerAim playerAim;
 
     private Vector2 movement;
 
@@ -69,7 +62,6 @@ public class IsometricPlayerController : MonoBehaviour
     {
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        main = FindObjectOfType<Camera>();
         manager = FindObjectOfType<GameManager>();
         GetComponent<PlayerAim>().OnShoot += IsometricPlayerController_OnShoot;
 
@@ -94,7 +86,6 @@ public class IsometricPlayerController : MonoBehaviour
             //Increment time variables
             timeSinceDodge += Time.deltaTime;
             timeSinceSwing += Time.deltaTime;
-            timeSinceShot += Time.deltaTime;
 
             //Assign x and y values of movement
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -119,14 +110,10 @@ public class IsometricPlayerController : MonoBehaviour
             //Sprinting
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                sprinting = true;
-
                 currentSpeed *= sprintMultiplier;
             }
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                sprinting = false;
-
                 currentSpeed = baseMovementSpeed;
             }
 

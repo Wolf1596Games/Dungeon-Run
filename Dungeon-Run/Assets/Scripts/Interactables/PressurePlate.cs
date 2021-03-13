@@ -24,7 +24,7 @@ public class PressurePlate : MonoBehaviour
         {
             StartCoroutine("Activation");
         }
-        else if(!playerCanActivate && collision.tag == "Golem")
+        else if(!playerCanActivate && collision.tag == "Corpse")
         {
             StartCoroutine("Activation");
         }

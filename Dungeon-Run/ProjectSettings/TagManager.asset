@@ -7,6 +7,8 @@ TagManager:
   - Projectile
   - Enemy
   - Pickup
+  - Corpse
+  - Key
   layers:
   - Default
   - TransparentFX

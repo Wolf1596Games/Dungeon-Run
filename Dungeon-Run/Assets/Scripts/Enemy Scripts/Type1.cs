@@ -14,24 +14,27 @@ public class Type1 : Enemy
     public bool isCooling = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         enemyAnim = GetComponent<Animator>();
         currentState = EnemyState.idle;
         target = GameObject.FindWithTag("Player").transform;
         inTimer = timer;
+        currentHealth = maxHealth;
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        Death();
         CheckDistance();
+        
     }
 
     void CheckDistance()
     {
-        if (Vector3.Distance(target.position, transform.position) <= chaseRad && Vector3.Distance(target.position, transform.position) > atkRad)
+        if (Vector2.Distance(target.position, transform.position) <= chaseRad && Vector2.Distance(target.position, transform.position) > atkRad)
         {
             FollowPlayer();
         }
@@ -40,7 +43,7 @@ public class Type1 : Enemy
         {
             ResetPosition();
         }
-        if ((currentState == EnemyState.walk || currentState == EnemyState.attack) && Vector3.Distance(target.position, transform.position) <= atkRad && isCooling == false)
+        if ((currentState == EnemyState.walk || currentState == EnemyState.attack) && Vector2.Distance(target.position, transform.position) <= atkRad && isCooling == false)
         {
             Attack();
 
@@ -60,7 +63,7 @@ public class Type1 : Enemy
             enemyAnim.SetBool("isAttacking", false);
             enemyAnim.SetFloat("moveX", (target.position.x - transform.position.x));
             enemyAnim.SetFloat("moveY", (target.position.y - transform.position.y));
-            transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             isCooling = false;
             ChangeState(EnemyState.walk);
         }
@@ -95,7 +98,7 @@ public class Type1 : Enemy
 
     public void ResetPosition()
     {
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, homePos.position, moveSpeed * Time.deltaTime);
         enemyAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
         enemyAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
 
@@ -106,10 +109,8 @@ public class Type1 : Enemy
         }
     }
 
-    public void TakeDamage(int damageTaken)
+    public void Death()
     {
-        currentHealth -= damageTaken;
-
         if (currentHealth <= 0)
         {
             Destroy(gameObject);

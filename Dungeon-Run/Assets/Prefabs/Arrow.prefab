@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2864159332020391866}
   - component: {fileID: 2864159332020391865}
   - component: {fileID: 2864159332020391864}
-  - component: {fileID: 8993211941744785518}
+  - component: {fileID: 2864159332020391868}
   m_Layer: 12
   m_Name: Arrow
   m_TagString: Projectile
@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2864159332020391847}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -6.821371, y: -7.587527, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2864159332020391866
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71,10 +71,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 121158421
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7331647485126393194, guid: b00326731cd616a42aaea14d11d40be1, type: 3}
+  m_Sprite: {fileID: 8228233252389918964, guid: b00326731cd616a42aaea14d11d40be1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.3109007, y: -0.0058557987}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0115056, y: 0.23000002}
+    oldSize: {x: 1.0014907, y: 0.26}
     newSize: {x: 0.2603876, y: 1.01}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2603876, y: 1.01}
+  m_Size: {x: 0.27044868, y: 0.2856784}
   m_EdgeRadius: 0
 --- !u!50 &2864159332020391864
 Rigidbody2D:
@@ -128,11 +128,11 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
---- !u!114 &8993211941744785518
+  m_Constraints: 0
+--- !u!114 &2864159332020391868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,9 +141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2864159332020391847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4758590209f30be41bfda5248369ece8, type: 3}
+  m_Script: {fileID: 11500000, guid: a9020539c4d6a5f478356c433e0ab600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifespan: 1.5
-  timeSinceCreated: 0
-  moveSpeed: 10
+  damage: 1
+  speed: 10
+  direction: {x: 0, y: 0, z: 0}
+  lifetime: 5
+  rb: {fileID: 2864159332020391864}

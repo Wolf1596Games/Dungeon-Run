@@ -10,16 +10,16 @@ public class RoomManager : MonoBehaviour
     [Tooltip("Enemies detected")]
     [SerializeField] int enemiesDetected = 0;
 
-    TestDummy[] dummies;
+    Enemy[] enemies;
 
     // Start is called before the first frame update
     void Start()
     {
-        dummies = FindObjectsOfType<TestDummy>();
+        enemies = FindObjectsOfType<Enemy>();
 
-        foreach(TestDummy dummy in dummies)
+        foreach(Enemy enemy in enemies)
         {
-            if(Vector2.Distance(transform.position, dummy.transform.position) < checkRadius)
+            if(Vector2.Distance(transform.position, enemy.transform.position) < checkRadius)
             {
                 enemiesDetected += 1;
             }

@@ -4,23 +4,29 @@ using UnityEngine;
 
 public class Shooter : Enemy
 {
-    public GameObject projectile;
+    public Transform projectile;
     public Transform target;
+    public Transform spawnPoint;
     public float detectRad;
     public float timer;
-    private float inTimer = 3;
-    public bool isCooling;
+    public float inTimer;
+    public bool isCooling = false;
+    private Animator shooterAnim;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         target = GameObject.FindWithTag("Player").transform;
+        shooterAnim = GetComponent<Animator>();
+        currentState = EnemyState.idle;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         CheckDistance();
+        Death();
     
     }
 
@@ -28,27 +34,50 @@ public class Shooter : Enemy
     {
         if (Vector3.Distance(target.position, transform.position) <= detectRad && isCooling == false)
         {
-            ChangeState(EnemyState.attack);
-            Vector2 tempVector = target.transform.position - transform.position;
-            GameObject current = Instantiate(projectile, transform.position, Quaternion.identity);
-            isCooling = true;
-            current.GetComponent<Enemy_Projectile>().Launch(tempVector);
+            Attack();
+            
         }
-        else if (isCooling)
+        else if (currentState == EnemyState.attack && isCooling)
         {
             Cooldown();
         }
+       
 
+    }
+
+    void Attack()
+    {
+        ChangeState(EnemyState.attack);
+        shooterAnim.SetBool("isAttacking", true);
+        shooterAnim.SetFloat("aimX", (target.position.x - transform.position.x));
+        shooterAnim.SetFloat("aimY", (target.position.y - transform.position.y));
     }
     void Cooldown()
     {
-        //enemyAnim.SetBool("isAttacking", false);
+        
         timer -= Time.deltaTime;
-
         if (timer <= 0)
         {
             isCooling = false;
             timer = inTimer;
+        }
+    }
+    void TriggerArrow()
+    { 
+        if (timer == inTimer)
+        {
+            Transform arrow = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity);
+            Vector3 shootDir = (spawnPoint.position - target.position).normalized;
+            arrow.GetComponent<Enemy_Projectile>().Launch(shootDir);
+            shooterAnim.SetBool("isAttacking", false);
+        }
+        isCooling = true;
+    }
+    public void Death()
+    {
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     private void ChangeState(EnemyState newState)

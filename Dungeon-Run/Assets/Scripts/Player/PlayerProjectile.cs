@@ -32,7 +32,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if(collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<TestDummy>().TakeDamage(player.damage);
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(player.damage);
 
             Destroy(gameObject);
         }

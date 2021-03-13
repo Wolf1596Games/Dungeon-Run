@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator AstralPlaneCoroutine()
     {
+        yield return new WaitForSeconds(1.5f);
+
         lastSceneIndex = currentSceneIndex;
         SceneManager.LoadScene(astralPlaneScene);
 

@@ -8,13 +8,17 @@ public class PlayerProjectile : MonoBehaviour
     [SerializeField] float lifespan = 10f;
     [Tooltip("Time since the object was instantiated. FOR DEBUG ONLY")]
     [SerializeField] float timeSinceCreated = 0f;
+    [Tooltip("Projectile velocity")]
+    [SerializeField] float moveSpeed = 75f;
 
-    IsometricPlayerController player;
+    GameManager manager;
+    IsometricPlayerController activePlayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = FindObjectOfType<IsometricPlayerController>();
+        manager = FindObjectOfType<GameManager>();
+        activePlayer = manager.activePlayer;
     }
 
     // Update is called once per frame
@@ -28,13 +32,32 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
 
+    public void Setup(Vector3 shootDir)
+    {
+        Debug.Log("Setting up projectile");
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Debug.Log("Adding force of " + (shootDir * moveSpeed));
+        rb.AddForce(shootDir * moveSpeed, ForceMode2D.Impulse);
+
+        transform.eulerAngles = new Vector3(0, 0, GetAngleFromVectorFloat(shootDir));
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(player.damage);
+            collision.gameObject.GetComponent<Type1>().TakeDamage(activePlayer.damage);
 
             Destroy(gameObject);
         }
+    }
+
+    public float GetAngleFromVectorFloat(Vector3 dir)
+    {
+        dir = dir.normalized;
+        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        if (n < 0) n += 360;
+
+        return n;
     }
 }

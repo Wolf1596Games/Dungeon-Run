@@ -6,21 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(Renderer))]
 public class IsometricObject : MonoBehaviour
 {
-    private const int IsometricRangePerYUnit = 20;
-
-    [Tooltip("Will use this object to compute z-order")]
-    public Transform target;
-
-    [Tooltip("Use this to offset the object slightly in front of behind the Target object")]
-    public int targetOffset = 0;
+    private const int IsometricRangePerYUnit = 100;
 
     private void Update()
     {
-        if (target == null)
-            target = transform;
-
         Renderer renderer = GetComponent<Renderer>();
-        renderer.sortingOrder = -(int)(target.position.y * IsometricRangePerYUnit) + targetOffset;
+        renderer.sortingOrder = -(int)(transform.position.y * IsometricRangePerYUnit);
     }
-
 }

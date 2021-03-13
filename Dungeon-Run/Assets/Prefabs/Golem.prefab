@@ -130,8 +130,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8521442867774336256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.06591, y: -0.7681259, z: -9.617647}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -10.06591, y: -0.7681259, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 2715551910568557254}
   - {fileID: 9098534826943985763}
@@ -175,8 +175,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 121158421
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6382583357544706228, guid: b64f39af8b116fc469e66af943ee8bbd, type: 3}
   m_Color: {r: 0, g: 0.11303078, b: 0.8867924, a: 1}
@@ -268,13 +268,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: 0
-  currentHealth: 0
-  moveSpeed: 0
+  maxHealth: 5
+  currentHealth: 5
+  moveSpeed: 1
   target: {fileID: 0}
-  chaseRad: 0
-  atkRad: 0
-  timer: 0
+  chaseRad: 4
+  atkRad: 2
+  timer: 1.5
   homePos: {fileID: 0}
   isCooling: 0
   dropPoint: {fileID: 9098534826943985763}

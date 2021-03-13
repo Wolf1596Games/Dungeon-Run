@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 398763765397671326}
   - component: {fileID: 6225411441386844138}
   - component: {fileID: 398763765397671321}
-  m_Layer: 9
-  m_Name: Shooter 1
+  m_Layer: 11
+  m_Name: Shooter
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398763765397671324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2631693, y: -4.92, z: -9.617647}
+  m_LocalPosition: {x: -7.2631693, y: -4.92, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 6225411441686232248}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 121158421
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7208487837588491105, guid: 63bb6242743f14c47bd35aaa773249bb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398763765397671324}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6225411441686232248}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -246,15 +246,12 @@ MonoBehaviour:
   dodgeDuration: 0.5
   dodgeCooldown: 5
   dodgeMultiplier: 2.5
-  sprinting: 0
   maxHealth: 6
   currentHealth: 6
   damage: 1
   swingRange: 1.5
   timeBetweenSwings: 0.35
-  timeBetweenShots: 0.2
-  projectilePrefab: {fileID: 2864159332020391847, guid: fbcc8bfb2f17b3447ab958f6ecd22589, type: 3}
-  projectileSpeed: 6.5
+  projectilePrefab: {fileID: 5932007623274431203, guid: d84a05e976ac4fb4298c4218d4c7f583, type: 3}
   isActivePlayer: 0
 --- !u!114 &2146760202
 MonoBehaviour:
@@ -349,11 +346,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4438747604851251033, guid: 163a48f77a8a2bb42af34b9db00ee9ed, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4438747604851251033, guid: 163a48f77a8a2bb42af34b9db00ee9ed, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5944190982714042009, guid: 163a48f77a8a2bb42af34b9db00ee9ed, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163a48f77a8a2bb42af34b9db00ee9ed, type: 3}

@@ -147,9 +147,9 @@ public class IsometricPlayerController : MonoBehaviour
     //Attacking
     public void MeleeAttack()
     {
-        Type1[] enemies = FindObjectsOfType<Type1>();
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
 
-        foreach (Type1 enemy in enemies)
+        foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
             if (Vector2.Distance(transform.position, enemy.transform.position) <= swingRange)

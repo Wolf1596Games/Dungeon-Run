@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicDoor : MonoBehaviour
+public class GolemDoor : MonoBehaviour
 {
-    [SerializeField] private Switch activatorSwitch;
-    [SerializeField] private PressurePlate activatorPlate;
+    [SerializeField] private GolemPlate activatorPlate;
     [SerializeField] private string triggerName;
 
     private Collider2D collider2d;
@@ -22,17 +21,16 @@ public class BasicDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activatorSwitch != null && activatorSwitch.active)
+        if(activatorPlate != null && activatorPlate.active)
         {
             collider2d.isTrigger = true;
             sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
             //animator.SetTrigger(triggerName);
         }
-        else if(activatorPlate != null && activatorPlate.active)
+        else
         {
-            collider2d.isTrigger = true;
-            sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
-            //animator.SetTrigger(triggerName);
+            collider2d.isTrigger = false;
+            sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 1);
         }
     }
 }

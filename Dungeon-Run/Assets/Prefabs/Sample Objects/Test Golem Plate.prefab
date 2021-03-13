@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5421479572596408263}
   - component: {fileID: 5421479572596408256}
   - component: {fileID: 5421479572596408258}
-  - component: {fileID: 5421479572596408257}
+  - component: {fileID: 3765216291292024132}
   m_Layer: 0
-  m_Name: Test Switch
+  m_Name: Test Golem Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &5421479572596408257
+--- !u!114 &3765216291292024132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,8 +119,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5421479572596408259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66bd69c9b4fa1240bff5e503003841b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b29211f9064f7d40aa8c4c2a7f3b3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
   active: 0

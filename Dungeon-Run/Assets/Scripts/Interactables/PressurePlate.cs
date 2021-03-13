@@ -24,9 +24,17 @@ public class PressurePlate : MonoBehaviour
         {
             StartCoroutine("Activation");
         }
-        else if(!playerCanActivate && collision.tag == "Corpse")
+        else if(!playerCanActivate && collision.tag == "Corpse" || collision.tag == "Enemy")
         {
             StartCoroutine("Activation");
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(!playerCanActivate && collision.tag == "Corpse" || collision.tag == "Enemy")
+        {
+            StartCoroutine("Deactivation");
         }
     }
 
@@ -39,5 +47,14 @@ public class PressurePlate : MonoBehaviour
 
         active = false;
         previouslyActivated = true;
+    }
+    private IEnumerator Deactivation()
+    {
+        active = false;
+        sprRenderer.color = Color.yellow;
+
+        yield return new WaitForEndOfFrame();
+
+        previouslyActivated = false;
     }
 }

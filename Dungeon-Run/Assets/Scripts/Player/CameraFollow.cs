@@ -11,16 +11,19 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-        playerPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
-        if(target.localScale.x > 0f)
+        if (target != null)
         {
-            playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y + offset, playerPosition.z);
-        }
-        else
-        {
-            playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y - offset, playerPosition.z);
-        }
+            playerPosition = new Vector3(target.position.x, target.position.y, transform.position.z);
+            if (target.localScale.x > 0f)
+            {
+                playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y + offset, playerPosition.z);
+            }
+            else
+            {
+                playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y - offset, playerPosition.z);
+            }
 
-        transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing + Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing + Time.deltaTime); 
+        }
     }
 }

@@ -46,11 +46,17 @@ public class GameManager : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         currentSceneIndex = scene.buildIndex;
+
+        //Quitting
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitGame();
+        }
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level One");
+        StartCoroutine("StartGameCoroutine");
     }
     public void ToAstralPlane()
     {
@@ -73,6 +79,15 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    private IEnumerator StartGameCoroutine()
+    {
+        SceneManager.LoadScene("Level One");
+
+        yield return new WaitForSeconds(1f);
+
+        players = GetPlayers();
+        ChooseActivePlayer();
+    }
     private IEnumerator AstralPlaneCoroutine()
     {
         yield return new WaitForSeconds(1.5f);

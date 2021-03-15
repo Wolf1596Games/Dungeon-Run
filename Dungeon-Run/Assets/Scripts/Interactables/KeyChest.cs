@@ -22,7 +22,7 @@ public class KeyChest : MonoBehaviour
     {
         player = manager.activePlayer.transform;
 
-        if(Vector2.Distance(transform.position, player.position) <= playerDetectionRange)
+        if(player != null && Vector2.Distance(transform.position, player.position) <= playerDetectionRange)
         {
             playerInRange = true;
         }

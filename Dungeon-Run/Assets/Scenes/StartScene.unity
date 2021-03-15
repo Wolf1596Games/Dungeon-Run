@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6684759046805881885, guid: d5a37e8a75444954d804800ecd8691b3, type: 3}
+      propertyPath: astralPlaneScene
+      value: Running From Death
+      objectReference: {fileID: 0}
     - target: {fileID: 6684759046805881886, guid: d5a37e8a75444954d804800ecd8691b3, type: 3}
       propertyPath: m_RootOrder
       value: 3

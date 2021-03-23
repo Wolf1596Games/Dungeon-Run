@@ -68,10 +68,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("NextLevelCoroutine");
     }
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
     private IEnumerator StartGameCoroutine()
     {

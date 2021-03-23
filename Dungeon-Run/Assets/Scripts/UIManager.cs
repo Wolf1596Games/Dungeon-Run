@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void PauseControl()
+    public void PauseControl()
     {
         if(Time.timeScale == 1)
         {
@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void ShowPaused()
+    public void ShowPaused()
     {
         foreach(GameObject g in pauseObjects)
         {
@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void HidePaused()
+    public void HidePaused()
     {
         foreach(GameObject g in pauseObjects)
         {

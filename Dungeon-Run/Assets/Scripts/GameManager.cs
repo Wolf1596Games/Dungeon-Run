@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("Name of the scene the player should be transferred to upon death")]
     [SerializeField] private string astralPlaneScene;
 
-    private IsometricPlayerController[] players;
+    public IsometricPlayerController[] players;
     public IsometricPlayerController activePlayer;
     public int currentSceneIndex;
     public int lastSceneIndex;
@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-        ChooseActivePlayer();
+        if(players.Length != 0)
+        {
+            ChooseActivePlayer();
+        }
     }
 
     private void Update()

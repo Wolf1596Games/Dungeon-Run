@@ -46,12 +46,6 @@ public class GameManager : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
         currentSceneIndex = scene.buildIndex;
-
-        //Quitting
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            QuitGame();
-        }
     }
 
     public void StartGame()

@@ -11,16 +11,19 @@ public class KeyChest : MonoBehaviour
 
     private Transform player;
     private GameManager manager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        manager = FindObjectOfType<GameManager>();
-    }
 
     // Update is called once per frame
     void Update()
     {
-        player = manager.activePlayer.transform;
+        if(manager == null)
+        {
+            manager = FindObjectOfType<GameManager>();
+        }
+
+        if(manager != null && player == null)
+        {
+            player = manager.activePlayer.transform;
+        }
 
         if(player != null && Vector2.Distance(transform.position, player.position) <= playerDetectionRange)
         {

@@ -76,19 +76,19 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Level One");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
 
         players = GetPlayers();
         ChooseActivePlayer();
     }
     private IEnumerator AstralPlaneCoroutine()
     {
-        yield return new WaitForSeconds(1.5f);
+        //yield return new WaitForSeconds(1.5f);
 
         lastSceneIndex = currentSceneIndex;
         SceneManager.LoadScene(astralPlaneScene);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
 
         players = GetPlayers();
         ChooseActivePlayer();
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(lastSceneIndex);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
 
         players = GetPlayers();
         ChooseActivePlayer();
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         lastSceneIndex = currentSceneIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.1f);
 
         players = GetPlayers();
 

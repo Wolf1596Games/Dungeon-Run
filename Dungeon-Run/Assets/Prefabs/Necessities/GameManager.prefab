@@ -44,3 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astralPlane: 0
+  astralPlaneScene: Running From Death
+  players: []
+  activePlayer: {fileID: 0}
+  currentSceneIndex: 0
+  lastSceneIndex: 0

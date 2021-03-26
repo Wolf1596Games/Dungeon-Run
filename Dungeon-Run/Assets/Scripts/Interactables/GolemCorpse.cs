@@ -10,17 +10,18 @@ public class GolemCorpse : MonoBehaviour
     private GameManager manager;
     public Transform player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        manager = FindObjectOfType<GameManager>();
-    }
-
     // Update is called once per frame
     void Update()
     {
+        if (manager == null)
+        {
+            manager = FindObjectOfType<GameManager>();
+        }
 
-        player = manager.activePlayer.transform;
+        if (manager != null && player == null)
+        {
+            player = manager.activePlayer.transform;
+        }
 
         if (Vector2.Distance(transform.position, player.position) <= playerDetectionRange)
         {

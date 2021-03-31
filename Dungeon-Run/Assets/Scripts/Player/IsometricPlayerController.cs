@@ -187,6 +187,8 @@ public class IsometricPlayerController : MonoBehaviour
     {
         if(!manager.astralPlane)
         {
+            manager = FindObjectOfType<GameManager>();
+
             manager.astralPlane = true;
             manager.ToAstralPlane();
         }

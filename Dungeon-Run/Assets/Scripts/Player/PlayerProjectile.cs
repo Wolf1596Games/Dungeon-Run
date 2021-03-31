@@ -48,6 +48,10 @@ public class PlayerProjectile : MonoBehaviour
 
             Destroy(gameObject);
         }
+        else if(collision.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 
     public float GetAngleFromVectorFloat(Vector3 dir)

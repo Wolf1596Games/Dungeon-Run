@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public int lastSceneIndex;
 
     Scene scene;
+    DialogueManager dManager;
 
     private CameraFollow mainCam;
 
@@ -80,6 +81,8 @@ public class GameManager : MonoBehaviour
 
         players = GetPlayers();
         ChooseActivePlayer();
+        dManager = FindObjectOfType<DialogueManager>();
+        dManager.ShowDialogue(dManager.startingDialogue);
     }
     private IEnumerator AstralPlaneCoroutine()
     {
@@ -92,6 +95,8 @@ public class GameManager : MonoBehaviour
 
         players = GetPlayers();
         ChooseActivePlayer();
+        dManager = FindObjectOfType<DialogueManager>();
+        dManager.ShowDialogue(dManager.startingDialogue);
     }
     private IEnumerator FromAstralPlaneCoroutine()
     {
@@ -110,8 +115,9 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(.1f);
 
         players = GetPlayers();
-
         ChooseActivePlayer();
+        dManager = FindObjectOfType<DialogueManager>();
+        dManager.ShowDialogue(dManager.startingDialogue);
     }
 
     public IsometricPlayerController[] GetPlayers()

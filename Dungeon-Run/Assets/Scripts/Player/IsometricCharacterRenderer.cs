@@ -30,7 +30,7 @@ public class IsometricCharacterRenderer : MonoBehaviour
         else
         {
             directionArray = runDirections;
-            lastDirection = DirectionToIndex(direction, 2);
+            lastDirection = DirectionToIndex(direction, 8);
         }
 
         //To be implemented once animations are in place

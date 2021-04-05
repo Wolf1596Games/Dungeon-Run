@@ -20,13 +20,15 @@ public class DialogueManager : MonoBehaviour
 
     public void ShowDialogue(string newText)
     {
-        foreach(GameObject dObject in dialogueObjects)
+        foreach (GameObject dObject in dialogueObjects)
         {
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             visible = true;
             dialogueText.text = newText;
             dObject.SetActive(true);
         }
+
+        dialogueText.GetComponent<TextTypwriter>().Display();
     }
 
     public void HideDialogue()
@@ -35,6 +37,7 @@ public class DialogueManager : MonoBehaviour
         {
             Time.timeScale = 1;
             visible = false;
+            dialogueText.text = "";
             dObject.SetActive(false);
         }
     }

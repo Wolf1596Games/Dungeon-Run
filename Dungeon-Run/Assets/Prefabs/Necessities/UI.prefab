@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 8244393021568966685}
   - component: {fileID: 8244393021568966674}
   m_Layer: 5
-  m_Name: Pause UI
+  m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,6 +846,7 @@ GameObject:
   - component: {fileID: 7729045055552383043}
   - component: {fileID: 6423491501157521980}
   - component: {fileID: 5449583772226606294}
+  - component: {fileID: 9207485255204634620}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: Dialogue
@@ -914,3 +915,16 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Placeholder Text
+--- !u!114 &9207485255204634620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923848513958695887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4149e8866e278724ba28e3a23e1d1d8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSpeed: 0.125

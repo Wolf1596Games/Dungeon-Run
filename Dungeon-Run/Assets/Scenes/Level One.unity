@@ -47147,6 +47147,12 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 178579074}
+    - target: {fileID: 2992106071721367122, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
+      propertyPath: startingDialogue
+      value: 'This is a dialogue box
+
+        Test'
+      objectReference: {fileID: 0}
     - target: {fileID: 2992106071721367123, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: m_RootOrder
       value: 38

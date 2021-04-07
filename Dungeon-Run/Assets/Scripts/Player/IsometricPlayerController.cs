@@ -130,7 +130,8 @@ public class IsometricPlayerController : MonoBehaviour
         if (isActivePlayer)
         {
             //Movement
-            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime); 
+            rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
+            isoRenderer.SetDirection(movement);
         }
     }
 

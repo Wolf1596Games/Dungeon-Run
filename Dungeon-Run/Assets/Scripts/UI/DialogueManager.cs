@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public bool visible = false;
     GameObject[] dialogueObjects;
     public Text dialogueText;
+    [TextArea(1, 5)]
     public string startingDialogue;
 
     private void Start()

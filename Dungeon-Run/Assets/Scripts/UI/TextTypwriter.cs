@@ -31,8 +31,8 @@ public class TextTypwriter : MonoBehaviour
         foreach(char c in text)
         {
             txt.text += c;
-            AudioClip sound = typingSounds[Random.Range(0, typingSounds.Length)];
-            audioSource.PlayOneShot(sound);
+            //AudioClip sound = typingSounds[Random.Range(0, typingSounds.Length)];
+            //audioSource.PlayOneShot(sound);
             yield return new WaitForSeconds(textSpeed);
         }
     }

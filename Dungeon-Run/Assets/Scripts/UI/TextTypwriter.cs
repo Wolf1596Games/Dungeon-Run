@@ -8,6 +8,14 @@ public class TextTypwriter : MonoBehaviour
     Text txt;
     string text;
     public float textSpeed = 0.125f;
+    public AudioClip[] typingSounds;
+
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void Display()
     {
@@ -23,6 +31,8 @@ public class TextTypwriter : MonoBehaviour
         foreach(char c in text)
         {
             txt.text += c;
+            AudioClip sound = typingSounds[Random.Range(0, typingSounds.Length)];
+            audioSource.PlayOneShot(sound);
             yield return new WaitForSeconds(textSpeed);
         }
     }

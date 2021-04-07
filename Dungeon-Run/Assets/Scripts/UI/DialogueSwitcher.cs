@@ -7,7 +7,7 @@ public class DialogueSwitcher : MonoBehaviour
 {
     GameManager manager;
     DialogueManager dManager;
-    [TextArea(1, 5)]
+    [TextArea(3, 5)]
     public string dialogueText;
     
     // Start is called before the first frame update

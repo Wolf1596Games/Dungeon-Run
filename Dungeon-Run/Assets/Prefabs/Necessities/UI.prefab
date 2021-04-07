@@ -929,7 +929,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSpeed: 0.125
-  typingSounds: []
+  typingSounds:
+  - {fileID: 8300000, guid: 44794258541375340ba367d3ac5c799d, type: 3}
+  - {fileID: 8300000, guid: 13f2d9e066ed60149b1ac78b0806520b, type: 3}
+  - {fileID: 8300000, guid: 1b78ce244c1a0954b9aa1ad4d772d91b, type: 3}
+  - {fileID: 8300000, guid: d4645f0265c34ad40817949a3f2aa08a, type: 3}
+  - {fileID: 8300000, guid: b8b958ac8857b8b4392e8bf24614958f, type: 3}
+  - {fileID: 8300000, guid: 555dfeb5abad7c143b7ea9c9daa8efad, type: 3}
+  - {fileID: 8300000, guid: 62ffdeec143746a46a0ce856bda0b1ff, type: 3}
+  - {fileID: 8300000, guid: 599236aeb1c16a7408b283624af3a792, type: 3}
+  - {fileID: 8300000, guid: 6efcef142c0a0804d97a9991f02c7b95, type: 3}
+  - {fileID: 8300000, guid: 92a86dd24ed91e845b18fffcbf4930ac, type: 3}
+  - {fileID: 8300000, guid: e8eeaf473105f2d408d2f7405959ec01, type: 3}
+  - {fileID: 8300000, guid: 64d928ec0e86224419a6616015ba2e0a, type: 3}
+  - {fileID: 8300000, guid: 3955ecdce1b082d48b27306acaa32a29, type: 3}
+  - {fileID: 8300000, guid: d65fa512a442e404999e65ffe3cf3a80, type: 3}
+  - {fileID: 8300000, guid: efef37a443bea6b4586266b4b48c7c6c, type: 3}
 --- !u!82 &7403543236204339380
 AudioSource:
   m_ObjectHideFlags: 0

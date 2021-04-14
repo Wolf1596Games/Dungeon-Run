@@ -6,36 +6,37 @@ public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
     [Tooltip("Base player movement speed")]
-    [SerializeField] float baseMovementSpeed = 2f;
+    public float baseMovementSpeed = 2f;
     [Tooltip("Current player movement speed")]
-    [SerializeField] public float currentSpeed = 0f;
+    public float currentSpeed = 0f;
     [Tooltip("Multiplier for sprinting")]
-    [SerializeField] float sprintMultiplier = 1.75f;
+    public float sprintMultiplier = 1.75f;
     [Tooltip("Duration of the player's dodge")]
-    [SerializeField] float dodgeDuration = .5f;
+    public float dodgeDuration = .5f;
     [Tooltip("Player's dodge cooldown")]
-    [SerializeField] float dodgeCooldown = 5f;
+    public float dodgeCooldown = 5f;
     [Tooltip("Multiplier for dodging")]
-    [SerializeField] float dodgeMultiplier = 2.5f;
+    public float dodgeMultiplier = 2.5f;
 
     [Header("Player Health")]
     [Tooltip("Player's max health")]
-    [SerializeField] public int maxHealth = 6;
+    public int maxHealth = 6;
     [Tooltip("Player's current health")]
-    [SerializeField] public int currentHealth = 6;
+    public int currentHealth = 6;
 
     [Header("Player Combat")]
     [Tooltip("Player's damage per hit")]
-    [SerializeField] public int damage = 1;
+    public int damage = 1;
     [Tooltip("Player's melee swing range")]
-    [SerializeField] float swingRange = 1.5f;
+    public float swingRange = 1.5f;
     [Tooltip("Time between player's melee attacks")]
-    [SerializeField] float timeBetweenSwings = .35f;
+    public float timeBetweenSwings = .35f;
 
     [Header("Projectile")]
     [Tooltip("Prefab object for projectiles")]
-    [SerializeField] Transform projectilePrefab;
+    public Transform projectilePrefab;
 
+    [Tooltip("Whether or not this player object is the active player")]
     public bool isActivePlayer = false;
 
     //Private movement variables

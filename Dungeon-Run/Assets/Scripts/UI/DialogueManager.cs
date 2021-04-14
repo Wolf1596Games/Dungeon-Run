@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     GameObject[] dialogueObjects;
     public Text dialogueText;
     [TextArea(3, 5)]
+    [Tooltip("Text to be displayed on start of scene")]
     public string startingDialogue;
 
     private void Start()
@@ -23,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (GameObject dObject in dialogueObjects)
         {
-            //Time.timeScale = 0;
             visible = true;
             dialogueText.text = newText;
             dObject.SetActive(true);

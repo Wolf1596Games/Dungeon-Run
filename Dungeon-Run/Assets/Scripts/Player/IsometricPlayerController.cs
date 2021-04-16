@@ -36,6 +36,14 @@ public class IsometricPlayerController : MonoBehaviour
     [Tooltip("Prefab object for projectiles")]
     public Transform projectilePrefab;
 
+    [Header("Audio")]
+    [Tooltip("Array of sounds for when the player is damaged")]
+    public AudioClip[] damagedSounds;
+    [Tooltip("Array of sounds for when the player fires a projectile")]
+    public AudioClip[] projectileSounds;
+    [Tooltip("Array of sounds for when the player uses a melee attack")]
+    public AudioClip[] meleeSounds;
+
     [Tooltip("Whether or not this player object is the active player")]
     public bool isActivePlayer = false;
 
@@ -52,6 +60,7 @@ public class IsometricPlayerController : MonoBehaviour
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
     private GameManager manager;
+    private AudioSource audioSource;
 
     private Vector2 movement;
 
@@ -60,6 +69,7 @@ public class IsometricPlayerController : MonoBehaviour
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         rb = GetComponent<Rigidbody2D>();
         manager = FindObjectOfType<GameManager>();
+        audioSource = GetComponent<AudioSource>();
         GetComponent<PlayerAim>().OnShoot += IsometricPlayerController_OnShoot;
 
         //Set speed to base speed

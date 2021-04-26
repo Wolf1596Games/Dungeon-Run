@@ -8,9 +8,16 @@ public class KeyChest : MonoBehaviour
     public bool playerInRange = false;
     public float playerDetectionRange = 1f;
     public GameObject keyPrefab;
+    public AudioClip openingFX;
 
     private Transform player;
+    private AudioSource audioSource;
     private GameManager manager;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,6 +43,7 @@ public class KeyChest : MonoBehaviour
 
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            audioSource.PlayOneShot(openingFX);
             Open();
         }
     }

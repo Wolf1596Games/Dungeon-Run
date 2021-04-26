@@ -78,6 +78,7 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
     {
+        audioSource.PlayOneShot(projectileSounds[Random.Range(0, projectileSounds.Length)]);
         Transform projectileTransform = Instantiate(projectilePrefab, e.gunEndPointPosition, Quaternion.identity);
 
         Vector3 shootDir = (e.shootPosition - e.gunEndPointPosition).normalized;

@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 380425293}
   - component: {fileID: 380425295}
   - component: {fileID: 380425294}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12179,9 +12179,9 @@ GameObject:
   - component: {fileID: 639939481}
   - component: {fileID: 639939480}
   - component: {fileID: 639939483}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45438,7 +45438,7 @@ GameObject:
   - component: {fileID: 831243792}
   - component: {fileID: 831243794}
   - component: {fileID: 831243793}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}

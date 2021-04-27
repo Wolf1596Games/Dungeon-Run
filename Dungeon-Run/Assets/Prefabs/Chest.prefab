@@ -100,6 +100,7 @@ MonoBehaviour:
   playerDetectionRange: 1
   keyPrefab: {fileID: 6415661518912463756, guid: 75ae5b8c805c49d43b44aaa4c5d5a2e2, type: 3}
   openingFX: {fileID: 8300000, guid: 9ee2f0186dde46d4c92382b60779d44a, type: 3}
+  openingTIme: 1.25
 --- !u!82 &-6776410732287725541
 AudioSource:
   m_ObjectHideFlags: 0

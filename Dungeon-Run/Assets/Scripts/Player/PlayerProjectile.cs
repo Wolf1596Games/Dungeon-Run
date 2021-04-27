@@ -42,6 +42,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collision");
         if(collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(activePlayer.damage);

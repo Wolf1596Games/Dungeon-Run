@@ -162,6 +162,7 @@ public class IsometricPlayerController : MonoBehaviour
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
+        audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
         foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
@@ -170,14 +171,17 @@ public class IsometricPlayerController : MonoBehaviour
                 //Check to make sure the dummy is on the correct side
                 if (facingLeft == true && enemy.transform.position.x <= transform.position.x)
                 {
+                    //audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
                     enemy.TakeDamage(damage);
                 }
                 else if (facingRight == true && enemy.transform.position.x > transform.position.x)
                 {
+                    //audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
                     enemy.TakeDamage(damage);
                 }
                 else
                 {
+                    
                     Debug.Log("No enemy detected");
                 }
             }

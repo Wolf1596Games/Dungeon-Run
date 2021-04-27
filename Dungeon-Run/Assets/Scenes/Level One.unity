@@ -47436,6 +47436,34 @@ PrefabInstance:
       propertyPath: timeBetweenSwings
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: d991546a70d8c2748a4e2b235a1e5c26, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d630de40a0b41cb4bbe9f902f97baad9, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b6e5c5066c722714ab9cc4f6bd82f2e4, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e5de80ab3ebb66489ff53b3658df1cf, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 33211461a9408464cba566c9a9f36033, type: 3}
+    - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: meleeSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4512d3b77d74ecd48889769107195e40, type: 3}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Enabled
       value: 1

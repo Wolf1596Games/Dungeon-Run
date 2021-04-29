@@ -6,36 +6,45 @@ public class IsometricPlayerController : MonoBehaviour
 {
     [Header("Movement Variables")]
     [Tooltip("Base player movement speed")]
-    [SerializeField] float baseMovementSpeed = 2f;
+    public float baseMovementSpeed = 2f;
     [Tooltip("Current player movement speed")]
-    [SerializeField] public float currentSpeed = 0f;
+    public float currentSpeed = 0f;
     [Tooltip("Multiplier for sprinting")]
-    [SerializeField] float sprintMultiplier = 1.75f;
+    public float sprintMultiplier = 1.75f;
     [Tooltip("Duration of the player's dodge")]
-    [SerializeField] float dodgeDuration = .5f;
+    public float dodgeDuration = .5f;
     [Tooltip("Player's dodge cooldown")]
-    [SerializeField] float dodgeCooldown = 5f;
+    public float dodgeCooldown = 5f;
     [Tooltip("Multiplier for dodging")]
-    [SerializeField] float dodgeMultiplier = 2.5f;
+    public float dodgeMultiplier = 2.5f;
 
     [Header("Player Health")]
     [Tooltip("Player's max health")]
-    [SerializeField] public int maxHealth = 6;
+    public int maxHealth = 6;
     [Tooltip("Player's current health")]
-    [SerializeField] public int currentHealth = 6;
+    public int currentHealth = 6;
 
     [Header("Player Combat")]
     [Tooltip("Player's damage per hit")]
-    [SerializeField] public int damage = 1;
+    public int damage = 1;
     [Tooltip("Player's melee swing range")]
-    [SerializeField] float swingRange = 1.5f;
+    public float swingRange = 1.5f;
     [Tooltip("Time between player's melee attacks")]
-    [SerializeField] float timeBetweenSwings = .35f;
+    public float timeBetweenSwings = .35f;
 
     [Header("Projectile")]
     [Tooltip("Prefab object for projectiles")]
-    [SerializeField] Transform projectilePrefab;
+    public Transform projectilePrefab;
 
+    [Header("Audio")]
+    [Tooltip("Array of sounds for when the player is damaged")]
+    public AudioClip[] damagedSounds;
+    [Tooltip("Array of sounds for when the player fires a projectile")]
+    public AudioClip[] projectileSounds;
+    [Tooltip("Array of sounds for when the player uses a melee attack")]
+    public AudioClip[] meleeSounds;
+
+    [Tooltip("Whether or not this player object is the active player")]
     public bool isActivePlayer = false;
 
     //Private movement variables
@@ -51,6 +60,7 @@ public class IsometricPlayerController : MonoBehaviour
     private IsometricCharacterRenderer isoRenderer;
     private Rigidbody2D rb;
     private GameManager manager;
+    private AudioSource audioSource;
 
     private Vector2 movement;
 
@@ -59,6 +69,7 @@ public class IsometricPlayerController : MonoBehaviour
         isoRenderer = GetComponentInChildren<IsometricCharacterRenderer>();
         rb = GetComponent<Rigidbody2D>();
         manager = FindObjectOfType<GameManager>();
+        audioSource = GetComponent<AudioSource>();
         GetComponent<PlayerAim>().OnShoot += IsometricPlayerController_OnShoot;
 
         //Set speed to base speed
@@ -67,6 +78,7 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
     {
+        audioSource.PlayOneShot(projectileSounds[Random.Range(0, projectileSounds.Length)]);
         Transform projectileTransform = Instantiate(projectilePrefab, e.gunEndPointPosition, Quaternion.identity);
 
         Vector3 shootDir = (e.shootPosition - e.gunEndPointPosition).normalized;
@@ -150,6 +162,7 @@ public class IsometricPlayerController : MonoBehaviour
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
+        audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
         foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
@@ -158,14 +171,17 @@ public class IsometricPlayerController : MonoBehaviour
                 //Check to make sure the dummy is on the correct side
                 if (facingLeft == true && enemy.transform.position.x <= transform.position.x)
                 {
+                    //audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
                     enemy.TakeDamage(damage);
                 }
                 else if (facingRight == true && enemy.transform.position.x > transform.position.x)
                 {
+                    //audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
                     enemy.TakeDamage(damage);
                 }
                 else
                 {
+                    
                     Debug.Log("No enemy detected");
                 }
             }

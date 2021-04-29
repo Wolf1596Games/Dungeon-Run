@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [Tooltip("Projectile's lifespan")]
-    [SerializeField] float lifespan = 10f;
+    public float lifespan = 10f;
     [Tooltip("Time since the object was instantiated. FOR DEBUG ONLY")]
-    [SerializeField] float timeSinceCreated = 0f;
+    public float timeSinceCreated = 0f;
     [Tooltip("Projectile velocity")]
-    [SerializeField] float moveSpeed = 75f;
+    public float moveSpeed = 75f;
 
     GameManager manager;
     IsometricPlayerController activePlayer;
@@ -42,6 +42,7 @@ public class PlayerProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Collision");
         if(collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(activePlayer.damage);

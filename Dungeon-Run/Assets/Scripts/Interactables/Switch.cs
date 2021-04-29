@@ -8,12 +8,15 @@ public class Switch : MonoBehaviour
     public bool playerInRange = false;
     [Tooltip("Whether or not the switch is active")]
     public bool active = false;
+    public AudioClip flipNoise;
 
     private SpriteRenderer sprRenderer;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         sprRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,11 +39,13 @@ public class Switch : MonoBehaviour
         if(playerInRange && Input.GetKeyDown(KeyCode.E) && !active)
         {
             active = true;
+            audioSource.PlayOneShot(flipNoise);
             sprRenderer.color = Color.green;
         }
         else if(playerInRange && Input.GetKeyDown(KeyCode.E) && active)
         {
             active = false;
+            audioSource.PlayOneShot(flipNoise);
             sprRenderer.color = Color.yellow;
         }
     }

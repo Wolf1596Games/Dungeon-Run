@@ -10,12 +10,15 @@ public class PressurePlate : MonoBehaviour
     public bool previouslyActivated = false;
     [Tooltip("Sets whether the player can activate it or not")]
     public bool playerCanActivate = true;
+    public AudioClip activationNoise;
 
     SpriteRenderer sprRenderer;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         sprRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,10 +45,12 @@ public class PressurePlate : MonoBehaviour
     {
         active = true;
         sprRenderer.color = Color.green;
+        audioSource.PlayOneShot(activationNoise);
 
         yield return new WaitForEndOfFrame();
 
         active = false;
+        audioSource.PlayOneShot(activationNoise);
         previouslyActivated = true;
     }
     private IEnumerator Deactivation()

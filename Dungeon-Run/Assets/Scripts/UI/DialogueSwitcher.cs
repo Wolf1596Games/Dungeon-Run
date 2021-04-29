@@ -8,6 +8,7 @@ public class DialogueSwitcher : MonoBehaviour
     GameManager manager;
     DialogueManager dManager;
     [TextArea(3, 5)]
+    [Tooltip("Text to be displayed")]
     public string dialogueText;
     
     // Start is called before the first frame update

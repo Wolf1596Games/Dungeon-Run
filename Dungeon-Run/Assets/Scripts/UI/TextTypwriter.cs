@@ -7,7 +7,9 @@ public class TextTypwriter : MonoBehaviour
 {
     Text txt;
     string text;
+    [Tooltip("Speed at which text appears")]
     public float textSpeed = 0.125f;
+    [Tooltip("Array of audio clips for typing")]
     public AudioClip[] typingSounds;
 
     AudioSource audioSource;

@@ -8,9 +8,17 @@ public class KeyChest : MonoBehaviour
     public bool playerInRange = false;
     public float playerDetectionRange = 1f;
     public GameObject keyPrefab;
+    public AudioClip openingFX;
+    public float openingTIme = 1f;
 
     private Transform player;
+    private AudioSource audioSource;
     private GameManager manager;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -36,14 +44,16 @@ public class KeyChest : MonoBehaviour
 
         if(playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            Open();
+            audioSource.PlayOneShot(openingFX);
+            StartCoroutine("Opening");
         }
     }
 
-    private void Open()
+    private IEnumerator Opening()
     {
-        Instantiate(keyPrefab, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(openingTIme);
 
+        Instantiate(keyPrefab, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

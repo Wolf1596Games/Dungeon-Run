@@ -34,6 +34,7 @@ public class Boss_2 : Enemy
     {
         CheckDistance();
         Strafe();
+        Death();
     }
 
     void Strafe()

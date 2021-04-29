@@ -9,7 +9,7 @@ public class Type1 : Enemy
     public float atkRad;
     public float timer;
     public Transform homePos;
-    private Animator enemyAnim;
+    public Animator enemyAnim;
     private float inTimer;
     public bool isCooling = false;
 
@@ -57,11 +57,11 @@ public class Type1 : Enemy
 
     void FollowPlayer()
     {
-        if (currentState == EnemyState.idle || currentState == EnemyState.walk || currentState == EnemyState.attack)
+        if (currentState == EnemyState.idle || currentState == EnemyState.walk || currentState == EnemyState.attack || currentState == EnemyState.shoot)
         {
             enemyAnim.SetBool("isMoving", true);
             enemyAnim.SetBool("isAttacking", false);
-            enemyAnim.SetFloat("moveX", (target.position.x - transform.position.x));
+            enemyAnim.SetFloat("moveX", (target.position.x - transform.position.x)); 
             enemyAnim.SetFloat("moveY", (target.position.y - transform.position.y));
             transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             isCooling = false;

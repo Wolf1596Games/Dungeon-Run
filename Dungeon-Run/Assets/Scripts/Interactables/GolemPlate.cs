@@ -6,6 +6,8 @@ public class GolemPlate : MonoBehaviour
 {
     [Tooltip("Whether or not the pressure plate is active or not")]
     public bool active = false;
+    public Color activationColor;
+    public Color deactivationColor;
 
     SpriteRenderer sprRenderer;
 
@@ -19,7 +21,7 @@ public class GolemPlate : MonoBehaviour
         if(collision.tag == "Corpse")
         {
             active = true;
-            sprRenderer.color = Color.green;
+            sprRenderer.color = activationColor;
         }
     }
 
@@ -28,7 +30,7 @@ public class GolemPlate : MonoBehaviour
         if(collision.tag == "Corpse")
         {
             active = false;
-            sprRenderer.color = Color.yellow;
+            sprRenderer.color = deactivationColor;
         }
     }
 }

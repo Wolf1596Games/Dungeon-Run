@@ -28,7 +28,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8801636130908820876, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: timeBetweenShots
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 896123058, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Name
@@ -70,6 +70,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1ba675aacfffa6d4890d901e7c4508ae, type: 3}
+    - target: {fileID: 1465911186, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465911186, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 121158421
+      objectReference: {fileID: 0}
     - target: {fileID: 2146760201, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: projectileSpeed
       value: 1
@@ -115,6 +123,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 4512d3b77d74ecd48889769107195e40, type: 3}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.21352291
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -122,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: a1a43a1a0bdd5a440b8ceaa865f0ff6f, type: 2}
+    - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.08239631
+      objectReference: {fileID: 0}
     - target: {fileID: 2146760206, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_AngularDrag
       value: 0
@@ -139,8 +155,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5302797114235280180, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302797114235280180, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_SortingOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5302797114235280180, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 121158421
       objectReference: {fileID: 0}
     - target: {fileID: 7624255134566090074, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_RootOrder
@@ -198,7 +222,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 896123060, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
 --- !u!1 &4908568730675301349 stripped
 GameObject:

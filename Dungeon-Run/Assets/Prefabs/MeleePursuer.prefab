@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: 0
+  maxHealth: 4
   currentHealth: 0
   moveSpeed: 1.5
   target: {fileID: 0}
@@ -205,6 +205,7 @@ MonoBehaviour:
   atkRad: 1.2
   timer: 0.6
   homePos: {fileID: 0}
+  enemyAnim: {fileID: 0}
   isCooling: 0
 --- !u!50 &4960574374706100581
 Rigidbody2D:

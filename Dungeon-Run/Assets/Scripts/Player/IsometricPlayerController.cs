@@ -202,11 +202,17 @@ public class IsometricPlayerController : MonoBehaviour
     }
     public void Death()
     {
-        if(!manager.astralPlane)
+        if (!manager.astralPlane)
         {
             manager = FindObjectOfType<GameManager>();
 
             manager.ToAstralPlane();
+        }
+        else
+        {
+            manager = FindObjectOfType<GameManager>();
+
+            manager.GameOver();
         }
         //Destroy(gameObject);
     }

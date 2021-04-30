@@ -206,7 +206,6 @@ public class IsometricPlayerController : MonoBehaviour
         {
             manager = FindObjectOfType<GameManager>();
 
-            manager.astralPlane = true;
             manager.ToAstralPlane();
         }
         //Destroy(gameObject);

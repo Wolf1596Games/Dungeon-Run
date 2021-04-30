@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
         ChooseActivePlayer();
         dManager = FindObjectOfType<DialogueManager>();
         dManager.ShowDialogue(dManager.startingDialogue);
+        astralPlane = true;
     }
     private IEnumerator FromAstralPlaneCoroutine()
     {
@@ -106,6 +107,7 @@ public class GameManager : MonoBehaviour
 
         players = GetPlayers();
         ChooseActivePlayer();
+        astralPlane = false;
     }
     private IEnumerator NextLevelCoroutine()
     {

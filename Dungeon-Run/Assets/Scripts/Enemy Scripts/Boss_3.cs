@@ -125,6 +125,7 @@ public class Boss_3 : Enemy
         transform.position = Vector2.MoveTowards(transform.position, homePos.position, moveSpeed * Time.deltaTime);
         enemyAnim.SetFloat("moveX", (homePos.position.x - transform.position.x));
         enemyAnim.SetFloat("moveY", (homePos.position.y - transform.position.y));
+        enemyAnim.SetBool("isMoving", true);
 
         if (transform.position == homePos.position)
         {

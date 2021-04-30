@@ -276,6 +276,7 @@ MonoBehaviour:
   atkRad: 2
   timer: 1.5
   homePos: {fileID: 0}
+  enemyAnim: {fileID: 0}
   isCooling: 0
   dropPoint: {fileID: 9098534826943985763}
   corpsePrefab: {fileID: 2365896850121299993, guid: ac75ee0eef891164a9e365d98eed9ff1, type: 3}

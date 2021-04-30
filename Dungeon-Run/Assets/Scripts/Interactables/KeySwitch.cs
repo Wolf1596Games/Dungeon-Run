@@ -5,6 +5,7 @@ using UnityEngine;
 public class KeySwitch : MonoBehaviour
 {
     public bool active = false;
+    public Color activationColor;
 
     private SpriteRenderer sprRenderer;
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class KeySwitch : MonoBehaviour
         if(collision.tag == "Key")
         {
             active = true;
-            sprRenderer.color = Color.green;
+            sprRenderer.color = activationColor;
 
             collision.transform.parent = null;
             Destroy(collision.gameObject);

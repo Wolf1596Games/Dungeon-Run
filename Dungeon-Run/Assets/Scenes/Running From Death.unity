@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,7 +189,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -248,6 +248,12 @@ PrefabInstance:
       propertyPath: dialogueText
       value: 
       objectReference: {fileID: 2013232246}
+    - target: {fileID: 2992106071721367122, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
+      propertyPath: startingDialogue
+      value: You died. But it's not over yet! Escape by using three switches (candles
+        are placeholder art) to activate the portal back to the world of the living.
+        But don't let the reaper catch you! If he does it's game over.
+      objectReference: {fileID: 0}
     - target: {fileID: 2992106071721367123, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -50257,7 +50263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799183713
 GameObject:
@@ -50302,7 +50308,7 @@ Transform:
   - {fileID: 1731059036}
   - {fileID: 499876596}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &812974137 stripped
 MonoBehaviour:
@@ -50324,7 +50330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1371702283941920711, guid: 17809c4a128ca51458a8adb6b948ff5f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1371702283941920711, guid: 17809c4a128ca51458a8adb6b948ff5f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50392,7 +50398,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7624255134566090074, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7624255134566090074, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50449,7 +50455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -50595,7 +50601,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1539589864
 BoxCollider2D:
@@ -50623,6 +50629,67 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!1001 &1540730002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4500357876957830355, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: chaseRad
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8837183668529110515, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
+      propertyPath: m_Name
+      value: Reaper
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
 --- !u!114 &1545831557 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 232855772152679203, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
@@ -63230,7 +63297,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5709153344327516528, guid: b7e134c8b4a5c8b47afa35fe7e373d12, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5709153344327516528, guid: b7e134c8b4a5c8b47afa35fe7e373d12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63298,7 +63365,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2096845786176671386, guid: 0d06dbf1a228529428daa8ea2144f991, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2096845786176671386, guid: 0d06dbf1a228529428daa8ea2144f991, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63357,6 +63424,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5449583772226606294, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_Text
+      value: Placeholder Text
+      objectReference: {fileID: 0}
     - target: {fileID: 8244393021568966675, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_Name
       value: Pause UI
@@ -63464,6 +63535,10 @@ PrefabInstance:
     - target: {fileID: 8244393021996628746, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PauseControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 9207485255204634620, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: textSpeed
+      value: 0.0625
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}

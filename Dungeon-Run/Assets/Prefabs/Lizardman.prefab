@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: 3
+  maxHealth: 30
   currentHealth: 0
   moveSpeed: 1.5
   projectile: {fileID: 2864159332020391867, guid: fbcc8bfb2f17b3447ab958f6ecd22589, type: 3}

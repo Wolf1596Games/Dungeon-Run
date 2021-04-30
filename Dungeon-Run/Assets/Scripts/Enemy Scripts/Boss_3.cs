@@ -6,6 +6,8 @@ public class Boss_3 : Enemy
 {
     public Transform projectile;
     public Transform spawnPoint;
+    public Transform spawnPoint2;
+    public Transform spawnPoint3;
     public float detectRad;
     public float shootTimer;
     public float inShootTimer;
@@ -174,8 +176,14 @@ public class Boss_3 : Enemy
         if (shootTimer == inShootTimer)
         {
             Transform arrow = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity);
+            Transform arrow2 = Instantiate(projectile, spawnPoint2.transform.position, Quaternion.identity);
+            Transform arrow3 = Instantiate(projectile, spawnPoint3.transform.position, Quaternion.identity);
             Vector3 shootDir = (spawnPoint.position - target.position).normalized;
+            Vector3 shootDir2 = (spawnPoint2.position - target.position).normalized;
+            Vector3 shootDir3 = (spawnPoint3.position - target.position).normalized;
             arrow.GetComponent<Enemy_Projectile>().Launch(shootDir);
+            arrow2.GetComponent<Enemy_Projectile>().Launch(shootDir2);
+            arrow3.GetComponent<Enemy_Projectile>().Launch(shootDir3);
             enemyAnim.SetBool("isShooting", false);
         }
         shootCooling = true;

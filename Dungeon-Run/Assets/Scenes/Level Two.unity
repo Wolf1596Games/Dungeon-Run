@@ -1639,6 +1639,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7433554998055964432, guid: 402702a8d2e6bee4694cbeada75e05df, type: 3}
+      propertyPath: detectRad
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7433554998055964432, guid: 402702a8d2e6bee4694cbeada75e05df, type: 3}
       propertyPath: shootTimer
       value: 0
       objectReference: {fileID: 0}

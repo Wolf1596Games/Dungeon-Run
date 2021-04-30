@@ -239,8 +239,8 @@ MonoBehaviour:
   currentState: 0
   maxHealth: 0
   currentHealth: 0
-  moveSpeed: 2
+  moveSpeed: 1
   target: {fileID: 0}
-  chaseRad: 6
+  chaseRad: 1000
   enemyAnim: {fileID: 0}
   isCooling: 0

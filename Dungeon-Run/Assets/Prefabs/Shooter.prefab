@@ -153,7 +153,7 @@ MonoBehaviour:
   projectile: {fileID: 2864159332020391867, guid: fbcc8bfb2f17b3447ab958f6ecd22589, type: 3}
   target: {fileID: 0}
   spawnPoint: {fileID: 6225411441686232248}
-  detectRad: 12
+  detectRad: 6
   timer: 0
   inTimer: 1
   isCooling: 0

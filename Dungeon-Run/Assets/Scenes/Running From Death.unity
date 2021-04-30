@@ -50636,10 +50636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4500357876957830355, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
-      propertyPath: chaseRad
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 8837183668529110511, guid: b21ba78dfcd566e43a4506d9b8226017, type: 3}
       propertyPath: m_RootOrder
       value: 1

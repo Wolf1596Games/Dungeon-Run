@@ -307,12 +307,12 @@ MonoBehaviour:
   spawnPoint: {fileID: 1846205421321871879}
   spawnPoint2: {fileID: 4696573538439662177}
   spawnPoint3: {fileID: 5486070743611641104}
-  detectRad: 3
+  detectRad: 6
   shootTimer: 0
   inShootTimer: 2
   shootCooling: 0
   target: {fileID: 0}
-  chaseRad: 2
+  chaseRad: 3
   atkRad: 1.2
   timer: 1
   homePos: {fileID: 0}

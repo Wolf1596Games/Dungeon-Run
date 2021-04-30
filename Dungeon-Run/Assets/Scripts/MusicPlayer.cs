@@ -15,4 +15,17 @@ public class MusicPlayer : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    private void Start()
+    {
+        int numMusicPlayers = FindObjectsOfType<MusicPlayer>().Length;
+        if(numMusicPlayers > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 }

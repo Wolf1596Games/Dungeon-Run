@@ -101,6 +101,8 @@ MonoBehaviour:
   switch2: {fileID: 0}
   animTriggerName: 
   openingSound: {fileID: 8300000, guid: b36caba014d84a746a5e37238d72def5, type: 3}
+  opened: 0
+  openingTime: 7
 --- !u!82 &-553066741948371205
 AudioSource:
   m_ObjectHideFlags: 0
@@ -206,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5708241842380991352}
-  - component: {fileID: 5708241842380991359}
+  - component: {fileID: 8707509170825825058}
   m_Layer: 8
   m_Name: GameObject
   m_TagString: Untagged
@@ -228,8 +230,8 @@ Transform:
   m_Father: {fileID: 5708241841965329915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.595}
---- !u!61 &5708241842380991359
-BoxCollider2D:
+--- !u!68 &8707509170825825058
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -241,16 +243,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.039313436, y: -0.32666826}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5051596, y: 0.34666348}
+  m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.0446761, y: -0.53096473}
+  - {x: 1.0735408, y: -0.7446484}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

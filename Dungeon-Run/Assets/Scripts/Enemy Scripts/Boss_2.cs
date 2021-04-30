@@ -19,6 +19,8 @@ public class Boss_2 : Enemy
     public float speed;
     public Transform[] moveSpots;
     private int randomSpot;
+    public GameObject bridgeSwitch;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -73,7 +75,7 @@ public class Boss_2 : Enemy
     void Shoot()
     {
         ChangeState(EnemyState.attack);
-        shooterAnim.SetBool("isAttacking", true);
+        shooterAnim.SetBool("isShooting", true);
         shooterAnim.SetFloat("moveX", (target.position.x - transform.position.x));
         shooterAnim.SetFloat("moveY", (target.position.y - transform.position.y));
     }
@@ -100,7 +102,7 @@ public class Boss_2 : Enemy
             arrow.GetComponent<Enemy_Projectile>().Launch(shootDir);
             arrow2.GetComponent<Enemy_Projectile>().Launch(shootDir2);
             arrow3.GetComponent<Enemy_Projectile>().Launch(shootDir3);
-            shooterAnim.SetBool("isAttacking", false);
+            shooterAnim.SetBool("isShooting", false);
         }
         isCooling = true;
     }
@@ -108,6 +110,7 @@ public class Boss_2 : Enemy
     {
         if (currentHealth <= 0)
         {
+            bridgeSwitch.SetActive(true);
             Destroy(gameObject);
         }
     }

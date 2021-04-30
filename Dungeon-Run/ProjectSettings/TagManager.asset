@@ -12,6 +12,7 @@ TagManager:
   - ShowOnPause
   - Wall
   - Dialogue
+  - Shield
   layers:
   - Default
   - TransparentFX

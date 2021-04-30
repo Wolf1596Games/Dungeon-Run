@@ -159,9 +159,15 @@ MonoBehaviour:
   spawnPoint2: {fileID: 6044023111088910879}
   spawnPoint3: {fileID: 8668552797316695944}
   detectRad: 5
-  timer: 1
-  inTimer: 1
+  shootTimer: 0
+  inShootTimer: 0
+  waitTime: 0
+  startWaitTime: 0
   isCooling: 0
+  speed: 0
+  moveSpots: []
+  spawnSwitch: {fileID: 4020775201536531802, guid: 27596f01800761c4ba3fbf8ffb19a5e4, type: 3}
+  switchLocation: {fileID: 0}
 --- !u!95 &5438170625232832121
 Animator:
   serializedVersion: 3

@@ -48,7 +48,7 @@ public class Shooter : Enemy
     void Attack()
     {
         ChangeState(EnemyState.attack);
-        shooterAnim.SetBool("isAttacking", true);
+        shooterAnim.SetBool("isShooting", true);
         shooterAnim.SetFloat("aimX", (target.position.x - transform.position.x));
         shooterAnim.SetFloat("aimY", (target.position.y - transform.position.y));
     }
@@ -69,7 +69,7 @@ public class Shooter : Enemy
             Transform arrow = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity);
             Vector3 shootDir = (spawnPoint.position - target.position).normalized;
             arrow.GetComponent<Enemy_Projectile>().Launch(shootDir);
-            shooterAnim.SetBool("isAttacking", false);
+            shooterAnim.SetBool("isShooting", false);
         }
         isCooling = true;
     }

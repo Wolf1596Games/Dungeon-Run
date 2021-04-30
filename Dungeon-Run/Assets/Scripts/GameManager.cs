@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         SceneManager.LoadScene("GameOver");
+        astralPlane = false;
     }
     public void ToNextLevel()
     {

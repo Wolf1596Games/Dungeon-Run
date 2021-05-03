@@ -37,9 +37,9 @@ public class GolemDoor : MonoBehaviour
 
     private IEnumerator Opening()
     {
+        collider2d.isTrigger = true;
         yield return new WaitForSeconds(openingTime);
 
-        collider2d.isTrigger = true;
         sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
         //animator.SetTrigger(triggerName);
     }

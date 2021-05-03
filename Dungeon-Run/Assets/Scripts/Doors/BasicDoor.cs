@@ -39,10 +39,10 @@ public class BasicDoor : MonoBehaviour
     private IEnumerator Opening()
     {
         audioSource.PlayOneShot(openingSound);
+        collider2d.isTrigger = true;
 
         yield return new WaitForSeconds(openingTime);
 
-        collider2d.isTrigger = true;
         sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
         //animator.SetTrigger(triggerName);
     }

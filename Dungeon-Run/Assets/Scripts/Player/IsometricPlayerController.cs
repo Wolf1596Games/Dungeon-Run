@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IsometricPlayerController : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class IsometricPlayerController : MonoBehaviour
     public int maxHealth = 6;
     [Tooltip("Player's current health")]
     public int currentHealth = 6;
+    [Tooltip("Slider Health Display")]
+    public Slider healthSlider;
 
     [Header("Player Combat")]
     [Tooltip("Player's damage per hit")]
@@ -72,8 +75,16 @@ public class IsometricPlayerController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         GetComponent<PlayerAim>().OnShoot += IsometricPlayerController_OnShoot;
 
+        if(healthSlider == null)
+        {
+            healthSlider = FindObjectOfType<Slider>();
+        }
+
         //Set speed to base speed
         currentSpeed = baseMovementSpeed;
+
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
@@ -194,6 +205,8 @@ public class IsometricPlayerController : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+
+        healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {

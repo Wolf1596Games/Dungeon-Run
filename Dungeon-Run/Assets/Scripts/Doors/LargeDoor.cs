@@ -36,9 +36,9 @@ public class LargeDoor : MonoBehaviour
 
     private IEnumerator Opening()
     {
+        collider2D.isTrigger = true;
         yield return new WaitForSeconds(openingTime);
 
-        collider2D.isTrigger = true;
         sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
     }
 }

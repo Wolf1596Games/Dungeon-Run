@@ -26,6 +26,8 @@ public class HealthPickup : MonoBehaviour
             {
                 activePlayer.currentHealth += 1;
 
+                activePlayer.healthSlider.value = activePlayer.currentHealth;
+
                 Destroy(gameObject);
             }
         }

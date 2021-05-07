@@ -30239,6 +30239,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5807858514222166532, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807858514222166532, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807858514222166532, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7144554266660648653, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7144554266660648653, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8244393021568966675, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_Name
       value: Pause UI

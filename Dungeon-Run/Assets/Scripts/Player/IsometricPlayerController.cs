@@ -67,7 +67,8 @@ public class IsometricPlayerController : MonoBehaviour
     private GameManager manager;
     private AudioSource audioSource;
 
-    private Vector2 movement;
+    
+    public Vector2 movement;
 
     private void Awake()
     {
@@ -154,6 +155,14 @@ public class IsometricPlayerController : MonoBehaviour
     {
         if (isActivePlayer)
         {
+            if(movement.magnitude >= 0.1f)
+            {
+                animator.SetBool("moving", true);
+            }
+            else
+            {
+                animator.SetBool("moving", false);
+            }
             //Movement
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
             //isoRenderer.SetDirection(movement);

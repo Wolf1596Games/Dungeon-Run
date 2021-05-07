@@ -58,6 +58,8 @@ public class IsometricPlayerController : MonoBehaviour
     private bool facingLeft = false;
     private bool facingRight = false;
 
+    [Header("References")]
+    public Animator animator;
     //References
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
@@ -154,7 +156,8 @@ public class IsometricPlayerController : MonoBehaviour
         {
             //Movement
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
-            isoRenderer.SetDirection(movement);
+            //isoRenderer.SetDirection(movement);
+            Animate();
         }
     }
 
@@ -225,5 +228,12 @@ public class IsometricPlayerController : MonoBehaviour
             manager.GameOver();
         }
         //Destroy(gameObject);
+    }
+
+    private void Animate()
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", currentSpeed);
     }
 }

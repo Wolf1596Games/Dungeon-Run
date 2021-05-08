@@ -28,7 +28,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8801636130908820876, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: timeBetweenShots
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 896123058, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Name
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 4512d3b77d74ecd48889769107195e40, type: 3}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Size.y
-      value: 0.21352291
+      value: 0.18754789
       objectReference: {fileID: 0}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Enabled
@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: a1a43a1a0bdd5a440b8ceaa865f0ff6f, type: 2}
     - target: {fileID: 2146760203, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_Offset.y
-      value: -0.08239631
+      value: -0.09538382
       objectReference: {fileID: 0}
     - target: {fileID: 2146760206, guid: 7d91efbce9ab29e4eb38b7a637668a7b, type: 3}
       propertyPath: m_AngularDrag

@@ -58,6 +58,8 @@ public class IsometricPlayerController : MonoBehaviour
     private bool facingLeft = false;
     private bool facingRight = false;
 
+    [Header("References")]
+    public Animator anim;
     //References
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
@@ -65,7 +67,8 @@ public class IsometricPlayerController : MonoBehaviour
     private GameManager manager;
     private AudioSource audioSource;
 
-    private Vector2 movement;
+    
+    public Vector2 movement;
 
     private void Awake()
     {
@@ -145,6 +148,8 @@ public class IsometricPlayerController : MonoBehaviour
             {
                 MeleeAttack();
             }
+
+
         }
     }
 
@@ -152,9 +157,19 @@ public class IsometricPlayerController : MonoBehaviour
     {
         if (isActivePlayer)
         {
+            if(movement.magnitude >= 0.1f)
+            {
+                anim.SetBool("moving", true);
+                anim.SetBool("attacking", false);                
+            }
+            else
+            {
+                anim.SetBool("moving", false);
+            }
             //Movement
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
-            isoRenderer.SetDirection(movement);
+            //isoRenderer.SetDirection(movement);
+            Animate();
         }
     }
 
@@ -174,6 +189,8 @@ public class IsometricPlayerController : MonoBehaviour
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
+        anim.SetBool("moving", false);
+        anim.SetBool("attacking", true);
         foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
@@ -225,5 +242,12 @@ public class IsometricPlayerController : MonoBehaviour
             manager.GameOver();
         }
         //Destroy(gameObject);
+    }
+
+    private void Animate()
+    {
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", currentSpeed);
     }
 }

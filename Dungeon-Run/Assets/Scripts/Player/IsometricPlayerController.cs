@@ -59,7 +59,7 @@ public class IsometricPlayerController : MonoBehaviour
     private bool facingRight = false;
 
     [Header("References")]
-    public Animator animator;
+    public Animator anim;
     //References
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
@@ -148,6 +148,8 @@ public class IsometricPlayerController : MonoBehaviour
             {
                 MeleeAttack();
             }
+
+
         }
     }
 
@@ -157,11 +159,12 @@ public class IsometricPlayerController : MonoBehaviour
         {
             if(movement.magnitude >= 0.1f)
             {
-                animator.SetBool("moving", true);
+                anim.SetBool("moving", true);
+                anim.SetBool("attacking", false);                
             }
             else
             {
-                animator.SetBool("moving", false);
+                anim.SetBool("moving", false);
             }
             //Movement
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
@@ -186,6 +189,8 @@ public class IsometricPlayerController : MonoBehaviour
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
+        anim.SetBool("moving", false);
+        anim.SetBool("attacking", true);
         foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
@@ -241,8 +246,8 @@ public class IsometricPlayerController : MonoBehaviour
 
     private void Animate()
     {
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", currentSpeed);
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", currentSpeed);
     }
 }

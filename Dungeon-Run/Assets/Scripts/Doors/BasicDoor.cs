@@ -13,14 +13,14 @@ public class BasicDoor : MonoBehaviour
     private Collider2D collider2d;
     private SpriteRenderer sprRenderer;
     private AudioSource audioSource;
-    //private Animator animator;
+    private Animator anim;
 
     private void Awake()
     {
         collider2d = GetComponentInChildren<Collider2D>();
         sprRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        //animator = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -40,10 +40,17 @@ public class BasicDoor : MonoBehaviour
     {
         audioSource.PlayOneShot(openingSound);
         collider2d.isTrigger = true;
+        anim.SetBool(triggerName, true);
 
         yield return new WaitForSeconds(openingTime);
 
         sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
-        //animator.SetTrigger(triggerName);
+        anim.SetBool(triggerName, false);
+        anim.SetBool("opened", true);
+    }
+
+    public void Opened()
+    {
+        anim.SetBool("opened", true);
     }
 }

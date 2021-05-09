@@ -48,9 +48,4 @@ public class BasicDoor : MonoBehaviour
         anim.SetBool(triggerName, false);
         anim.SetBool("opened", true);
     }
-
-    public void Opened()
-    {
-        anim.SetBool("opened", true);
-    }
 }

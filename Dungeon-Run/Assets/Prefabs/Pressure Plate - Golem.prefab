@@ -220,3 +220,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   active: 0
+  activatedPlate: {fileID: 21300000, guid: e815fe35547ea2443a01aade6813a79c, type: 3}
+  deactivatedPlate: {fileID: 21300000, guid: 0f11c20fc4fe71d41a1123ba990e1285, type: 3}

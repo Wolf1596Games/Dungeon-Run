@@ -29,6 +29,8 @@ public class PlayerAim : MonoBehaviour
         aimGunEndPointTransform = aimTransform.Find("GunEndPointPosition");
         controller = GetComponent<IsometricPlayerController>();
         aimAnimator = aimTransform.GetComponentInChildren<Animator>();
+
+        timeSinceLastShot = timeBetweenShots;
     }
 
     private void Update()

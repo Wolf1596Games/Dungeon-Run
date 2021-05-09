@@ -7,6 +7,7 @@ public class Resurrection : MonoBehaviour
 {
     private GameManager manager;
     private bool active = false;
+    public Sprite activatedPortal;
 
     [SerializeField] private Switch[] switches;
 
@@ -21,7 +22,7 @@ public class Resurrection : MonoBehaviour
     private void Activate()
     {
         active = true;
-        GetComponent<SpriteRenderer>().color = Color.magenta;
+        GetComponent<SpriteRenderer>().sprite = activatedPortal;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

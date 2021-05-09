@@ -9,8 +9,8 @@ public class Switch : MonoBehaviour
     [Tooltip("Whether or not the switch is active")]
     public bool active = false;
     public AudioClip flipNoise;
-    public Color activationColor;
-    public Color deactivationColor;
+    public Sprite activatedSwitch;
+    public Sprite deactivatedSwitch;
 
     private SpriteRenderer sprRenderer;
     private AudioSource audioSource;
@@ -42,13 +42,13 @@ public class Switch : MonoBehaviour
         {
             active = true;
             audioSource.PlayOneShot(flipNoise);
-            sprRenderer.color = activationColor;
+            sprRenderer.sprite = activatedSwitch;
         }
         else if(playerInRange && Input.GetKeyDown(KeyCode.E) && active)
         {
             active = false;
             audioSource.PlayOneShot(flipNoise);
-            sprRenderer.color = deactivationColor;
+            sprRenderer.sprite = deactivatedSwitch;
         }
     }
 }

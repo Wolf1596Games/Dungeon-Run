@@ -11,8 +11,8 @@ public class PressurePlate : MonoBehaviour
     [Tooltip("Sets whether the player can activate it or not")]
     public bool playerCanActivate = true;
     public AudioClip activationNoise;
-    public Color activationColor;
-    public Color deactivationColor;
+    public Sprite activatedPlate;
+    public Sprite deactivatedPlate;
 
     SpriteRenderer sprRenderer;
     private AudioSource audioSource;
@@ -46,7 +46,7 @@ public class PressurePlate : MonoBehaviour
     private IEnumerator Activation()
     {
         active = true;
-        sprRenderer.color = activationColor;
+        sprRenderer.sprite = activatedPlate;
         audioSource.PlayOneShot(activationNoise);
 
         yield return new WaitForEndOfFrame();
@@ -58,7 +58,7 @@ public class PressurePlate : MonoBehaviour
     private IEnumerator Deactivation()
     {
         active = false;
-        sprRenderer.color = deactivationColor;
+        sprRenderer.sprite = deactivatedPlate;
 
         yield return new WaitForEndOfFrame();
 

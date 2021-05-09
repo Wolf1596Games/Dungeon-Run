@@ -58,6 +58,8 @@ public class IsometricPlayerController : MonoBehaviour
     private bool facingLeft = false;
     private bool facingRight = false;
 
+    [Header("References")]
+    public Animator anim;
     //References
     //Player GameObject MUST have both this controller script and the IsometricCharacterRenderer
     private IsometricCharacterRenderer isoRenderer;
@@ -65,7 +67,8 @@ public class IsometricPlayerController : MonoBehaviour
     private GameManager manager;
     private AudioSource audioSource;
 
-    private Vector2 movement;
+    
+    public Vector2 movement;
 
     private void Awake()
     {
@@ -85,6 +88,9 @@ public class IsometricPlayerController : MonoBehaviour
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+
+        timeSinceDodge = dodgeCooldown;
+        timeSinceSwing = timeBetweenSwings;
     }
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
@@ -143,7 +149,8 @@ public class IsometricPlayerController : MonoBehaviour
             //Melee Attack
             if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
             {
-                MeleeAttack();
+                //MeleeAttack();
+                StartCoroutine("Melee");
             }
         }
     }
@@ -152,9 +159,19 @@ public class IsometricPlayerController : MonoBehaviour
     {
         if (isActivePlayer)
         {
+            if(movement.magnitude >= 0.1f && anim.GetBool("attacking") == false)
+            {
+                anim.SetBool("moving", true);
+                anim.SetBool("attacking", false);                
+            }
+            else if(movement.magnitude <= 0f && anim.GetBool("attacking") == false)
+            {
+                anim.SetBool("moving", false);
+            }
             //Movement
             rb.MovePosition(rb.position + movement * currentSpeed * Time.fixedDeltaTime);
-            isoRenderer.SetDirection(movement);
+            //isoRenderer.SetDirection(movement);
+            Animate();
         }
     }
 
@@ -169,11 +186,13 @@ public class IsometricPlayerController : MonoBehaviour
     }
 
     //Attacking
-    public void MeleeAttack()
+    private IEnumerator Melee()
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
         audioSource.PlayOneShot(meleeSounds[Random.Range(0, meleeSounds.Length)]);
+        anim.SetBool("moving", false);
+        anim.SetBool("attacking", true);
         foreach (Enemy enemy in enemies)
         {
             //If the dummy is within swingRange, attack
@@ -192,12 +211,14 @@ public class IsometricPlayerController : MonoBehaviour
                 }
                 else
                 {
-                    
+
                     Debug.Log("No enemy detected");
                 }
             }
         }
 
+        yield return new WaitForSeconds(timeBetweenSwings);
+        anim.SetBool("attacking", false);
         timeSinceSwing = 0f;
     }
 
@@ -225,5 +246,12 @@ public class IsometricPlayerController : MonoBehaviour
             manager.GameOver();
         }
         //Destroy(gameObject);
+    }
+
+    private void Animate()
+    {
+        anim.SetFloat("Horizontal", movement.x);
+        anim.SetFloat("Vertical", movement.y);
+        anim.SetFloat("Speed", currentSpeed);
     }
 }

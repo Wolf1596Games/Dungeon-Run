@@ -14,12 +14,14 @@ public class LargeDoor : MonoBehaviour
     private Collider2D collider2D;
     private SpriteRenderer sprRenderer;
     private AudioSource audioSource;
+    private Animator anim;
 
     private void Awake()
     {
         collider2D = GetComponentInChildren<Collider2D>();
         sprRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -37,8 +39,12 @@ public class LargeDoor : MonoBehaviour
     private IEnumerator Opening()
     {
         collider2D.isTrigger = true;
+        anim.SetBool(animTriggerName, true);
+
         yield return new WaitForSeconds(openingTime);
 
         sprRenderer.color = new Color(sprRenderer.color.r, sprRenderer.color.g, sprRenderer.color.b, 0);
+        anim.SetBool(animTriggerName, false);
+        anim.SetBool("opened", true);
     }
 }

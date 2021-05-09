@@ -88,6 +88,9 @@ public class IsometricPlayerController : MonoBehaviour
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
+
+        timeSinceDodge = dodgeCooldown;
+        timeSinceSwing = timeBetweenSwings;
     }
 
     private void IsometricPlayerController_OnShoot(object sender, PlayerAim.OnShootEventArgs e)
@@ -146,10 +149,9 @@ public class IsometricPlayerController : MonoBehaviour
             //Melee Attack
             if (Input.GetButtonDown("Fire1") && timeSinceSwing >= timeBetweenSwings)
             {
-                MeleeAttack();
+                //MeleeAttack();
+                StartCoroutine("Melee");
             }
-
-
         }
     }
 
@@ -157,12 +159,12 @@ public class IsometricPlayerController : MonoBehaviour
     {
         if (isActivePlayer)
         {
-            if(movement.magnitude >= 0.1f)
+            if(movement.magnitude >= 0.1f && anim.GetBool("attacking") == false)
             {
                 anim.SetBool("moving", true);
                 anim.SetBool("attacking", false);                
             }
-            else
+            else if(movement.magnitude <= 0f && anim.GetBool("attacking") == false)
             {
                 anim.SetBool("moving", false);
             }
@@ -184,7 +186,7 @@ public class IsometricPlayerController : MonoBehaviour
     }
 
     //Attacking
-    public void MeleeAttack()
+    private IEnumerator Melee()
     {
         Enemy[] enemies = FindObjectsOfType<Enemy>();
 
@@ -209,12 +211,14 @@ public class IsometricPlayerController : MonoBehaviour
                 }
                 else
                 {
-                    
+
                     Debug.Log("No enemy detected");
                 }
             }
         }
 
+        yield return new WaitForSeconds(timeBetweenSwings);
+        anim.SetBool("attacking", false);
         timeSinceSwing = 0f;
     }
 

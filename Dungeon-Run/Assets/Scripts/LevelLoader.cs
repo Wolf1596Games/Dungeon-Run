@@ -25,4 +25,8 @@ public class LevelLoader : MonoBehaviour
         //StartCoroutine("StartGameCoroutine");
         manager.StartGame();
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }

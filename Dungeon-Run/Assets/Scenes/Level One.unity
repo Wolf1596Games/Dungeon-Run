@@ -47522,14 +47522,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1676523711743545449, guid: 72363c63aabe81f4ebc6e081199389af, type: 3}
-      propertyPath: switch1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1676523711743545449, guid: 72363c63aabe81f4ebc6e081199389af, type: 3}
-      propertyPath: switch2
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2610139941437483205, guid: 72363c63aabe81f4ebc6e081199389af, type: 3}
       propertyPath: m_RootOrder
       value: 3

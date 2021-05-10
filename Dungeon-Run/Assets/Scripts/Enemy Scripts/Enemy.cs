@@ -18,11 +18,14 @@ public class Enemy : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
     public float moveSpeed;
+
     // Start is called before the first frame update
 
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+        GetComponent<AudioSource>().Play();
+
     }
     void Start()
     {

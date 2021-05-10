@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24be3c9b06720da4e9328e3ba6f89efa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switch1: {fileID: 0}
-  switch2: {fileID: 0}
+  switch1: {fileID: 4028032861174643957}
+  switch2: {fileID: 2610139941437483227}
   animTriggerName: opening
   openingSound: {fileID: 8300000, guid: b36caba014d84a746a5e37238d72def5, type: 3}
   opened: 0
@@ -419,6 +419,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 966583697873336120, guid: a45611c4a00698c4e9222fda76727b8b, type: 3}
   m_PrefabInstance: {fileID: 2977137404220858365}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2610139941437483227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 966583697873336102, guid: a45611c4a00698c4e9222fda76727b8b, type: 3}
+  m_PrefabInstance: {fileID: 2977137404220858365}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea87d2124721e24db9b217b417a8f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4219745630635314131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -481,3 +492,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 966583697873336120, guid: a45611c4a00698c4e9222fda76727b8b, type: 3}
   m_PrefabInstance: {fileID: 4219745630635314131}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4028032861174643957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 966583697873336102, guid: a45611c4a00698c4e9222fda76727b8b, type: 3}
+  m_PrefabInstance: {fileID: 4219745630635314131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea87d2124721e24db9b217b417a8f2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

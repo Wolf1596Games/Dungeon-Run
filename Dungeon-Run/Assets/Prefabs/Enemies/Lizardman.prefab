@@ -322,6 +322,8 @@ MonoBehaviour:
   switch2: {fileID: 0}
   switch3: {fileID: 0}
   isHealthMax: 0
+  keyChest1: {fileID: 8461037240790606660, guid: 078112d3f6c0faf438d13fbcdcac31aa, type: 3}
+  keyChest2: {fileID: 8461037240790606660, guid: 078112d3f6c0faf438d13fbcdcac31aa, type: 3}
 --- !u!82 &7439502797631939068
 AudioSource:
   m_ObjectHideFlags: 0

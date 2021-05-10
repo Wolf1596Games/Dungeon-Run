@@ -15,6 +15,7 @@ public class Boss_2 : Enemy
     public float waitTime;
     public float startWaitTime;
     public bool isCooling = false;
+    public bool accel = false;
     private Animator shooterAnim;
     public float speed;
     public Transform[] moveSpots;
@@ -36,6 +37,7 @@ public class Boss_2 : Enemy
     {
         CheckDistance();
         Strafe();
+        Accel();
         Death();
     }
 
@@ -72,6 +74,17 @@ public class Boss_2 : Enemy
 
     }
 
+    void Accel()
+    {
+        if(currentHealth <= (maxHealth / 2) && accel == false)
+        {
+            speed += 2;
+            inShootTimer = inShootTimer / 2;
+            startWaitTime = startWaitTime / 2;
+            accel = true;
+        }
+    }
+
     void Shoot()
     {
         ChangeState(EnemyState.attack);
@@ -87,6 +100,7 @@ public class Boss_2 : Enemy
         {
             isCooling = false;
             shootTimer = inShootTimer;
+            
         }
     }
     void TriggerArrow()

@@ -527,6 +527,10 @@ PrefabInstance:
       value: Boss1
       objectReference: {fileID: 0}
     - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
+      propertyPath: ramp
+      value: 
+      objectReference: {fileID: 3431447464024232467}
+    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 134209390}
@@ -47155,8 +47159,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Progression Staircase
       objectReference: {fileID: 0}
+    - target: {fileID: 3431447464773099547, guid: 7f74c97046a529b45b4e21544ea4d194, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f74c97046a529b45b4e21544ea4d194, type: 3}
+--- !u!1 &3431447464024232467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3431447464773099547, guid: 7f74c97046a529b45b4e21544ea4d194, type: 3}
+  m_PrefabInstance: {fileID: 3431447464024232466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3455324935888758821
 PrefabInstance:
   m_ObjectHideFlags: 0

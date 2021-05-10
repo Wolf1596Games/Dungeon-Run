@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
     GameManager manager;
+    Scene scene;
 
     public void QuitGame()
     {
@@ -28,5 +29,11 @@ public class LevelLoader : MonoBehaviour
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+    public void Restart()
+    {
+        scene = SceneManager.GetActiveScene();
+        int currentSceneIndex = scene.buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }

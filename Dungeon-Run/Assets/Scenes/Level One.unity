@@ -41547,7 +41547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726471081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.31, y: 4.16, z: 0}
+  m_LocalPosition: {x: -3.94, y: 3.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46592,6 +46592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6369590807008116106, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
+      propertyPath: homePos
+      value: 
+      objectReference: {fileID: 726471082}
     - target: {fileID: 8521442867774336256, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
       propertyPath: m_Name
       value: Golem

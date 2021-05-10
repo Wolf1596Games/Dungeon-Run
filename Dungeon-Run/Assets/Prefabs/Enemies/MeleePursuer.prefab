@@ -203,7 +203,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   target: {fileID: 0}
   chaseRad: 3
-  atkRad: 1.2
+  atkRad: 0.8
   timer: 0.6
   homePos: {fileID: 0}
   enemyAnim: {fileID: 0}

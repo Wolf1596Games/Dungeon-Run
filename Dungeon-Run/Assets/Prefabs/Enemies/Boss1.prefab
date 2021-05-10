@@ -167,13 +167,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  maxHealth: 0
-  currentHealth: 0
+  maxHealth: 10
+  currentHealth: 10
   moveSpeed: 0
   target: {fileID: 0}
-  chaseRad: 0
-  atkRad: 0
-  timer: 0
+  chaseRad: 6
+  atkRad: 1.8
+  timer: 1
   homePos: {fileID: 0}
   enemyAnim: {fileID: 0}
   isCooling: 0

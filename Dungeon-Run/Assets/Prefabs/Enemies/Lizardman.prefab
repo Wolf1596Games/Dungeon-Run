@@ -302,8 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   maxHealth: 30
-  currentHealth: 0
-  moveSpeed: 1.5
+  currentHealth: 30
+  moveSpeed: 2.5
   projectile: {fileID: 2864159332020391867, guid: fbcc8bfb2f17b3447ab958f6ecd22589, type: 3}
   spawnPoint: {fileID: 1846205421321871879}
   spawnPoint2: {fileID: 4696573538439662177}

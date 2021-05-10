@@ -212,7 +212,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &237479183
 PrefabInstance:
@@ -223,7 +223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1371702283941920711, guid: 17809c4a128ca51458a8adb6b948ff5f, type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1371702283941920711, guid: 17809c4a128ca51458a8adb6b948ff5f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -527,29 +527,9 @@ PrefabInstance:
       value: Boss1
       objectReference: {fileID: 0}
     - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
-      propertyPath: atkRad
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 134209390}
-    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
-      propertyPath: chaseRad
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
-      propertyPath: maxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5966187271026140187, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
-      propertyPath: currentHealth
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2fd9660d0262314b85ed4769b2ee5cd, type: 3}
 --- !u!1 &380425292
@@ -12220,54 +12200,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Tim
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 430703626}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -41620,22 +41560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Tedd
@@ -41645,33 +41569,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 701075828}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -45838,54 +45738,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Steve
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 1984405229}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -46009,7 +45869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2992106071721367123, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 2992106071721367123, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46064,54 +45924,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Rex
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 1582578671}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -46173,54 +45993,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Jimmy
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 1696360140}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -46282,54 +46062,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.x
-      value: 0.15018797
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Size.y
-      value: 0.19592166
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.0017552376
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100580, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.081239104
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100583, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_Name
       value: MeleePursuer Bob
       objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: timer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: atkRad
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 1320792685}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: chaseRad
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: maxHealth
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: moveSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4960574374706100600, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
-      propertyPath: currentHealth
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4960574374706100602, guid: 7073449696d3c614ea63a2a80b19af1c, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -46425,7 +46165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8244393021568966687, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8244393021568966687, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -46607,14 +46347,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8064209094826177404, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.034
-      objectReference: {fileID: 0}
-    - target: {fileID: 8064209094826177404, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.252
-      objectReference: {fileID: 0}
     - target: {fileID: 8064209095386775841, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
       propertyPath: m_Name
       value: Small Door 1 (2)
@@ -46686,22 +46418,6 @@ PrefabInstance:
     - target: {fileID: 8064209095386775852, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9144722413772741501, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_Points.Array.data[0].x
-      value: -0.36102587
-      objectReference: {fileID: 0}
-    - target: {fileID: 9144722413772741501, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_Points.Array.data[0].y
-      value: -0.11075477
-      objectReference: {fileID: 0}
-    - target: {fileID: 9144722413772741501, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_Points.Array.data[1].x
-      value: -0.021209933
-      objectReference: {fileID: 0}
-    - target: {fileID: 9144722413772741501, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
-      propertyPath: m_Points.Array.data[1].y
-      value: -0.51136386
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f0061c64ec1a6147b399c59b5cb9a97, type: 3}
@@ -46808,21 +46524,9 @@ PrefabInstance:
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6369590807008116106, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
-      propertyPath: atkRad
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6369590807008116106, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
       propertyPath: homePos
       value: 
       objectReference: {fileID: 1930387768}
-    - target: {fileID: 6369590807008116106, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
-      propertyPath: maxHealth
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6369590807008116106, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
-      propertyPath: currentHealth
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 8521442867774336256, guid: 3c2028186c99e3643a34e5fa8ee73a6c, type: 3}
       propertyPath: m_Name
       value: Golem (1)
@@ -46947,7 +46651,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5709153344327516528, guid: b7e134c8b4a5c8b47afa35fe7e373d12, type: 3}
       propertyPath: m_RootOrder
-      value: 39
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 5709153344327516528, guid: b7e134c8b4a5c8b47afa35fe7e373d12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47146,7 +46850,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696360139
 GameObject:
@@ -47189,36 +46893,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a38cc442541764b9335863423da049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1818817641
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1818817642}
-  m_Layer: 0
-  m_Name: Enemy Home Position (7)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1818817642
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818817641}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.74, y: 11.45, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1930387767
 GameObject:
   m_ObjectHideFlags: 0
@@ -47243,7 +46917,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1930387767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.66, y: 11.71, z: 0}
+  m_LocalPosition: {x: -5.164, y: 11.168, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -47414,7 +47088,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4662609217284511383, guid: 078112d3f6c0faf438d13fbcdcac31aa, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 4662609217284511383, guid: 078112d3f6c0faf438d13fbcdcac31aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47471,7 +47145,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 276916320512393096, guid: 9506fa53477b242419e83a9266e2eed4, type: 3}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 276916320512393096, guid: 9506fa53477b242419e83a9266e2eed4, type: 3}
       propertyPath: m_LocalPosition.x

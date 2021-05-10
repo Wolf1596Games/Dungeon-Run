@@ -73,7 +73,23 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine("NextLevelCoroutine");
     }
+    public void Restart()
+    {
+        StartCoroutine("RestartCoroutine");
+    }
 
+
+    private IEnumerator RestartCoroutine()
+    {
+        SceneManager.LoadScene(currentSceneIndex);
+
+        yield return new WaitForSeconds(.1f);
+
+        players = GetPlayers();
+        ChooseActivePlayer();
+        dManager = FindObjectOfType<DialogueManager>();
+        dManager.ShowDialogue(dManager.startingDialogue);
+    }
     private IEnumerator StartGameCoroutine()
     {
         SceneManager.LoadScene("Level One");

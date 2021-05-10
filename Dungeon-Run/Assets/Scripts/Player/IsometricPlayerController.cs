@@ -26,6 +26,10 @@ public class IsometricPlayerController : MonoBehaviour
     public int currentHealth = 6;
     [Tooltip("Slider Health Display")]
     public Slider healthSlider;
+    [Tooltip("Cooldown for player getting damaged")]
+    public float damageCooldown = .75f;
+    [Tooltip("Time since last damaged")]
+    public float timeSinceDamaged;
 
     [Header("Player Combat")]
     [Tooltip("Player's damage per hit")]
@@ -109,6 +113,7 @@ public class IsometricPlayerController : MonoBehaviour
             //Increment time variables
             timeSinceDodge += Time.deltaTime;
             timeSinceSwing += Time.deltaTime;
+            timeSinceDamaged += Time.deltaTime;
 
             //Assign x and y values of movement
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -225,13 +230,18 @@ public class IsometricPlayerController : MonoBehaviour
     //Taking damage
     public void TakeDamage(int damageTaken)
     {
-        currentHealth -= damageTaken;
-
-        healthSlider.value = currentHealth;
-
-        if (currentHealth <= 0)
+        if(timeSinceDamaged >= damageCooldown)
         {
-            Death();
+            currentHealth -= damageTaken;
+
+            healthSlider.value = currentHealth;
+
+            if (currentHealth <= 0)
+            {
+                Death();
+            }
+
+            timeSinceDamaged = 0f;
         }
     }
     public void Death()

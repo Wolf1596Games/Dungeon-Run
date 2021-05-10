@@ -24,7 +24,8 @@ public class Boss_3 : Enemy
     public Switch switch2;
     public Switch switch3;
     public bool isHealthMax = false;
-
+    public GameObject chest1;
+    public GameObject chest2;
     // Start is called before the first frame update
     void Awake()
     {
@@ -138,6 +139,8 @@ public class Boss_3 : Enemy
     {
         if (currentHealth <= 0 && (switch1.active && switch2.active && switch3.active))
         {
+            chest1.SetActive(true);
+            chest2.SetActive(true);
             Destroy(gameObject);
         }
         else if (currentHealth <= 0)

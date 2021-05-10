@@ -193,10 +193,9 @@ PrefabInstance:
       objectReference: {fileID: 2013232246}
     - target: {fileID: 2992106071721367122, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: startingDialogue
-      value: You died. But it's not over yet! Escape by using three switches (candles
-        are placeholder art) to activate the portal back to the world of the living.
-        But don't let the reaper catch you! He can't be killed and if he catches
-        you it's game over.
+      value: You died. But it's not over yet! Escape by using three switches to activate
+        the portal back to the world of the living. But don't let the reaper catch
+        you! He can't be killed and if he catches you it's game over.
       objectReference: {fileID: 0}
     - target: {fileID: 2992106071721367123, guid: 44d9b6d177594304dbc1a2714df2a7d2, type: 3}
       propertyPath: m_RootOrder

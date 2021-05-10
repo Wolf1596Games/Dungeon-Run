@@ -169,7 +169,7 @@ MonoBehaviour:
   currentState: 0
   maxHealth: 10
   currentHealth: 10
-  moveSpeed: 0
+  moveSpeed: 1.8
   target: {fileID: 0}
   chaseRad: 6
   atkRad: 1.8

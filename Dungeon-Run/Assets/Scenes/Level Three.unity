@@ -30229,7 +30229,7 @@ PrefabInstance:
       objectReference: {fileID: 251066682}
     - target: {fileID: 8244393021778175839, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+      value: LoadStart
       objectReference: {fileID: 0}
     - target: {fileID: 8244393021778175839, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -30242,6 +30242,14 @@ PrefabInstance:
     - target: {fileID: 8244393021996628746, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: PauseControl
+      objectReference: {fileID: 0}
+    - target: {fileID: 8804052856057169173, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 251066682}
+    - target: {fileID: 8804052856057169173, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a693a4dfd3fd85445b73095158f2d3e6, type: 3}

@@ -7,6 +7,7 @@ public class Golem : Type1
     public Transform dropPoint;
     public GameObject corpsePrefab;
 
+
     private void Start()
     {
         currentHealth = maxHealth;
